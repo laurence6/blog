@@ -1,3 +1,4 @@
+baseurl: blog.chit-chatting.tk
 permalink: /:year/:month/:day/:title  
 
 auto: true  
