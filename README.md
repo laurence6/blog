@@ -1,4 +1,4 @@
-laurence6.github.io
+This is the data for my blog
 ===================
 
-Hello. This is my blog.
+http://blog.chit-chatting.tk/
