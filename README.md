@@ -1,4 +1,4 @@
 laurence6.github.io
 ===================
 
-my blog
+Hello. This is my blog.
