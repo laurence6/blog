@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>{{ page.title }}</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+	<meta name="description" content="Liu's Blog : http://blog.chit-chatting.tk/" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+	<title>Liu's Blog</title>
 </head>
 
-<body background="http://ww1.sinaimg.cn/mw690/bf2cf099jw1e7u9y8la6aj206c06hglr.jpg">
+<body>
 
-	{{ content }}
+<!-- HEADER -->
+	<div id="header_wrap" class="outer">
+		<header class="inner">
 
+			<h1 id="project_title">Liu's Blog</h1>
+			<h2 id="project_tagline">http://blog.chit-chatting.tk/</h2>
+
+		</header>
+	</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+	<section id="main_content" class="inner">
+		{{ content }}
+	</section>
+</div>
+
+<!-- FOOTER  -->
+	<div id="footer_wrap" class="outer">
+		<footer class="inner">
+			<p align="center"><strong>Copyright © 2013 Liu All Rights Reserved.</strong></p>
+		</footer>
+	</div>
+   
 </body>
 </html>
