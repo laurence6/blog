@@ -8,42 +8,59 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 	<title>{{ page.title }}</title>
 </head>
-<body background="http://ww1.sinaimg.cn/mw690/bf2cf099jw1e7u9y8la6aj206c06hglr.jpg">
+<body>
+<!-- HEADER -->
+	<div id="header_wrap" class="outer">
+		<header class="inner">
 
-	<h1><a href="http://blog.chit-chatting.tk">Liu's Blog</a></h1>
-	<p><a href="http://blog.chit-chatting.tk">返回主页</a></p>
+			<h1 id="project_title">Liu's Blog</h1>
+			<h2 id="project_tagline">http://blog.chit-chatting.tk/</h2>
 
-	<h2>{{ page.title }}</h2>
-	<p>{{ page.date | date_to_string }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#disqus_thread">评论</a></p>
-	{{ content }}
-
-	<div class="jiathis_style_24x24">
-		<a class="jiathis_button_qzone"></a>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_tqq"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_renren"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-		<a class="jiathis_counter_style"></a>
+		</header>
 	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992" charset="utf-8"></script>
+
+<!-- MAIN CONTENT -->
+	<div id="main_content_wrap" class="outer">
+		<section id="main_content" class="inner">
+
+			<p><a href="http://blog.chit-chatting.tk">返回主页</a></p>
+
+			<h2>{{ page.title }}</h2>
+			<p>{{ page.date | date_to_string }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#disqus_thread">评论</a></p>
+			{{ content }}
+
+			<div class="jiathis_style_24x24">
+				<a class="jiathis_button_qzone"></a>
+				<a class="jiathis_button_tsina"></a>
+				<a class="jiathis_button_tqq"></a>
+				<a class="jiathis_button_weixin"></a>
+				<a class="jiathis_button_renren"></a>
+				<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+				<a class="jiathis_counter_style"></a>
+			</div>
+			<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992" charset="utf-8"></script>
 
 
-	<div id="disqus_thread"></div>
-	<script type="text/javascript">
-		var disqus_shortname = 'laurence6'; // required: replace example with your forum shortname
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				var disqus_shortname = 'laurence6'; // required: replace example with your forum shortname
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-		(function() {
-			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-	</script>
+			<p><br /><br /><a href="http://blog.chit-chatting.tk">返回主页</a></p>
+		</section>
+	</div>
 
-	<p><br /><br /><a href="http://blog.chit-chatting.tk">返回主页</a></p>
-
-	<p align="center"><strong>Copyright © 2013 Liu All Rights Reserved.</strong></p>
+<!-- FOOTER  -->
+	<div id="footer_wrap" class="outer">
+		<footer class="inner">
+			<p align="center"><strong>Copyright © 2013 Liu All Rights Reserved.</strong></p>
+		</footer>
+	</div>
 
 </body>
 </html>
