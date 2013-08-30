@@ -7,11 +7,11 @@ title: 首次安装arch记录
 <p>&nbsp;&nbsp;&nbsp;&nbsp;开始安装后进入了一个命令行...额 看着arch wiki，一步一步往下装。先建立并格式化分区，挂载到/mnt。接着连接网络。然后更改首选的镜像，安装基本系统，生成fstab。chroot到新的系统，并配置新的系统，语言、时区、时钟、网络、root密码...最后安装grub。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;重启后，开始安装X，还有xfce4、slim。安装完了这些后，发现pacman真的好快！特别快！绝大部分的时间都是花在下载上面了，安装的时候有的软件包一瞬间就安装好了，我和我的小伙伴们都惊呆了...</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;然后安装一些平时要用到的软件。首先是输入法。我选了fcitx+sunpinyin+cloudpinyin。还要在~/.xinitrc中加入：</p>
-<p><code>
+<code>
 export GTK_IM_MODULE=fcitx<br />
 export QT_IM_MODULE=fcitx<br />
 export XMODIFIERS="@im=fcitx"
-</code></p>
+</code>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;但是在我加入之后，却还是用不了。折腾几回后，又重新去看wiki。终于发现这些要放在exec startxfce4前面...</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;然后我需要安装一个浏览器，我比较喜欢chrome。在官方源里只有chromium，google官方也没有为arch提供编译好的安装包。google了一下，看到要用AUR来安装chrome。了解了一下AUR，和郭靖说的一样，它和ubuntu的PPA很像。首先需要安装yaourt，添加yaourt源至/etc/pacman.conf,然后就能用pacman安装了。yaourt的用法和pacman差不多，AUR里有很多各种各样的软件。很快就完成chrome的安装。后面还安装了libreoffice、pidgin、lwqq、audacious、vlc...我甚至还在AUR里找到了yunio。yunio是一个云存储，跨平台的，可用于windows、mac os x、linux、ios、android，而且现在还免费送60G存储空间（额这应该不算广告吧...）。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;我觉得总体来说arch还是很令人满意的，以后我就会将arch当作日常使用的发行版了。</p>
