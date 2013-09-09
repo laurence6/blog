@@ -10,7 +10,7 @@ layout: nil
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>http://blog.chit-chatting.tk/</id>
 	<author>
-		<name>Liu's Blog</name>
+		<name>Liu</name>
 		<email>liuxy6@gmail.com</email>
 	</author>
 
