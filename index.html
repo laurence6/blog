@@ -1,16 +1,32 @@
 ---
 layout: default
+title: Kunka
+keywords: Jekyll theme, Kunka
 ---
-<h2 align="center"><a href="/2013/08/20/about">>关于本站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/2013/08/20/aboutme">>关于我</a></h2>
-
-<p>最新文章</p>
-
-<ul>
-
-	{% for post in site.posts %}
-
-	<li>{{ post.date | date_to_string }} » <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-	{% endfor %}
-
-</ul>
+{% for post in paginator.posts %}
+    <div class="article">
+        <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <article class="rexp">
+            <p>{{ post.excerpt }}</p>
+        </article>
+        <a href="{{ post.url }}" class="more"><i class="icon-link"></i></a>
+        <div class="info">
+            <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+            <span class="info-date">{{ post.date | date_to_string }}</span>
+        </div>
+    </div>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+    <nav class="pagination fn-clear">
+        <span class="pagination-icon"><i class=" icon-copy"></i></span>
+        <ul class="pagination-list">
+            {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                    <li class="current"><a href="javascript:void(0);">{{ page }}</a></li>
+                {% else %}
+                    <li><a href="/{%if page > 1 %}page{{ page }}/{% endif %}">{{ page }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}
