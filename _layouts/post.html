@@ -9,7 +9,7 @@
 
 	<script type="text/javascript" src="/javascripts/high.js"></script>
 
-	<title>{{ page.title }}</title>
+	<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
 
 <body>
