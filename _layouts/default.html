@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-	<meta name="description" content="Liu's Blog : http://blog.chit-chatting.tk/" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="author" content="{{ site.author.name }}" />
+	<meta name="keywords" content="{{ page.keywords | join: ',' }}" />
+	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/default.css">
 
+	<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon" />
+
 	<script type="text/javascript" src="/javascripts/high.js"></script>
 
-	<title>Liu's Blog</title>
+	<title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 </head>
 
 <body>
