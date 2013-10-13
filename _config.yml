@@ -2,7 +2,7 @@ baseurl:
 permalink: /:year/:month/:day/:title
 auto: true
 pygments: true
-paginate: 8
+paginate: 20
 safe: false
 
 #Site config
