@@ -1,0 +1,18 @@
+baseurl: 
+permalink: /:year/:month/:day/:title  
+auto: true
+pygments: true
+paginate: 8
+safe:  false
+
+#Site config
+title: Liu's Blog
+keywords: Liu's Blog
+url: http://blog.chit-chatting.tk/
+feed: /atom.xml
+favicon: /images/icon.ico
+
+#googleAnaly
+googleAnaly:
+  config: true
+  id: UA-44812964-1
