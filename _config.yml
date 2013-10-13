@@ -1,9 +1,9 @@
 baseurl: 
-permalink: /:year/:month/:day/:title  
+permalink: /:year/:month/:day/:title
 auto: true
 pygments: true
 paginate: 8
-safe:  false
+safe: false
 
 #Site config
 title: Liu's Blog
