@@ -1,4 +1,4 @@
-This is the data for my blog
+http://blog.chit-chatting.tk/
 ===================
 
-http://blog.chit-chatting.tk/
+这是我在github上搭建的博客的源代码。
