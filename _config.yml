@@ -3,6 +3,7 @@ permalink: /:year/:month/:day/:title
 auto: true
 pygments: true
 paginate: 20
+
 safe: false
 
 #Site config
@@ -12,6 +13,38 @@ description: Liu's Blog：http://blog.chit-chatting.tk/
 url: http://blog.chit-chatting.tk/
 feed: /atom.xml
 favicon: /images/icon.ico
+
+#Nav config
+nav:
+  - text: 首页
+    url: /index.html
+  - text: 分类目录 
+    url: /categories.html
+  - text: 文章归档
+    url: /archives.html
+  - text: 关于本站
+    url: /about.html
+  - text: 关于我
+    url: /aboutme.html
+
+#Author config
+author:
+    name: Liu
+    email: liuxy6@gmail.com
+    imageLink: http://ww4.sinaimg.cn/mw690/bf2cf099gw1e9rvkxijypj20a00a1my8.jpg
+    simpleIntro: 我是 Liu ，一个普通的高中生。
+    detailIntro:
+
+#Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
+follow:
+  - class: icon-rss
+    url: /atom.xml
+  - class: icon-weibo
+    url: http://t.qq.com/l929878661
+  - class: icon-github
+    url: http://github.com/laurence6
+  - class: icon-google-plus
+    url: https://plus.google.com
 
 #googleAnaly
 googleAnaly:
