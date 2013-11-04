@@ -20,8 +20,6 @@ nav:
     url: /index.html
   - text: 分类目录 
     url: /categories.html
-  - text: 文章归档
-    url: /archives.html
   - text: 关于本站
     url: /about.html
   - text: 关于我
