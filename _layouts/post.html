@@ -2,8 +2,22 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
-<h6>{{ page.date | date_to_string }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ds-thread">评论</a></h6>
+<div class="info">
+	<span class="info-title"><i class="icon-calendar"></i> 发布: </span>
+	<span class="info-date">{{ page.date | date_to_string }}</span>
+	<span class="info-title"><i class="icon-folder-open"></i> 分类: </span>
+	<span class="info-link"><a href="/categories.html#{{ page.category }}-ref" >{{ page.category }}</a></span>
+</div>
 {{ content }}
+
+<nav class="article-previous fn-clear">
+	{% if page.previous %}
+		<a class="prev" href="{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+	{% endif %}
+	{% if page.next %}
+		<a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
+	{% endif %}
+</nav>
 
 <div class="jiathis_style_24x24">
 	<a class="jiathis_button_qzone"></a>
@@ -14,7 +28,6 @@ layout: default
 	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	<a class="jiathis_counter_style"></a>
 </div>
-
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992" charset="utf-8"></script>
 
 <div class="ds-thread"></div>

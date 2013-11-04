@@ -409,6 +409,67 @@ Full-Width Styles
 	color: rgba(255, 255, 255, 0.98);
 }
 
+.info {
+	font-size: 14px;
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+.info {
+	margin-bottom: 30px;
+}
+
+.info-title {
+	color: #888;
+	vertical-align: middle;
+	line-height: 24px;
+}
+
+.info-date {
+	margin-right: 15px;
+	color: #565656;
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+.info-link {
+	margin-right: 15px;
+	line-height: 24px;
+	vertical-align: middle;
+	border-bottom: none;
+}
+
+.info-link a:hover {
+	border-bottom: none;
+}
+
+.article-previous {
+	margin: 10px 0 40px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 10px 0;
+	position: relative;
+}
+.article-previous .prev,
+.article-previous .next {
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 10px;
+	background: #f2eeec;
+	border-bottom:  none;
+}
+.article-previous .prev {
+	float: left;
+}
+.article-previous .next {
+	float: right;
+}
+.article-previous .prev:hover,
+.article-previous .next:hover {
+	border-bottom: none;
+	color: #45625d;
+}
+
 /*******************************************************************************
 Small Device Styles
 *******************************************************************************/
