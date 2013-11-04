@@ -35,13 +35,13 @@ author:
 
 #Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
 follow:
-  - class: icon-rss
+  - class: fa fa-rss
     url: /atom.xml
-  - class: icon-weibo
+  - class: fa fa-weibo
     url: http://t.qq.com/l929878661
-  - class: icon-github
+  - class: fa fa-github
     url: https://github.com/laurence6
-  - class: icon-google-plus
+  - class: fa fa-google-plus
     url: https://plus.google.com
 
 #googleAnaly
