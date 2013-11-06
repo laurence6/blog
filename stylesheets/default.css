@@ -284,7 +284,7 @@ Full-Width Styles
 }
 
 #project_title, #project_title a {
-	margin: 0px 0px 0px 50px;
+	margin: 0px 0px 0px 25px;
 	width: 500px;
 	font-family: 'Spirax', cursive;
 	font-size: 64px;
