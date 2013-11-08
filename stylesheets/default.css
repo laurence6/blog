@@ -387,8 +387,8 @@ Full-Width Styles
 	border-bottom: 3px double rgba(255, 255, 255, 0.3);
 }
 .follow {
-	float: right;
-	width: 270px;
+	margin: 0 auto;
+	width: 200px;
 	height: 30px;
 	text-align: center;
 }
