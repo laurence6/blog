@@ -21,7 +21,7 @@ title: 分类目录
 	{% for node in pages_list %}
 		{% if node.title != null %}
 		{% if group == null or group == node.group %}
-			<li style="background:#F2EEEC; padding:5px; margin:3px 0">{{ node.date | date_to_string }} » <a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></li>
+			<li style="padding:5px; margin:3px 0"><span style="font-family:monospace">{{ node.date | date_to_string }} » </span><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></li>
 		{% endif %}
 		{% endif %}
 	{% endfor %}
