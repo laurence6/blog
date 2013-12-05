@@ -30,7 +30,7 @@ author:
     name: Liu
     email: liuxy6@gmail.com
     imageLink: http://ww4.sinaimg.cn/mw690/bf2cf099gw1e9rvkxijypj20a00a1my8.jpg
-    simpleIntro: 我是 Liu ，一个普通的高中生。
+    simpleIntro: 我是 Liu ，一名普通的高中生。
     detailIntro:
 
 #Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
@@ -45,6 +45,8 @@ follow:
     url: https://plus.google.com
   - class: fa fa-facebook
     url: https://www.facebook.com
+  - class: fa fa-twitter
+    url: https://twitter.com
 
 #googleAnaly
 googleAnaly:
