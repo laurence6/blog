@@ -33,7 +33,7 @@ author:
     simpleIntro: 我是 Liu ，一名普通的高中生。
     detailIntro:
 
-#Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
+#Follow me
 follow:
   - class: fa fa-rss
     url: /atom.xml
