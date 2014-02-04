@@ -2,13 +2,9 @@
 layout: default
 ---
 <ul>
-
     {% for post in paginator.posts %}
-
     <li><span style="font-family:monospace">{{ post.date | date_to_string }} » </span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
     {% endfor %}
- 
 </ul>
 
 <!--
