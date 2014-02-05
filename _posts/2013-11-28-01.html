@@ -4,11 +4,11 @@ title: 更换 grub 主题
 category: "linux"
 ---
 <p>最近看着 grub 默认的界面很丑，于是借助 google 以及 archwiki ，成功更换了 grub 的主题。</p>
-<p>下面是我换的主题的效果图：</p>
+<p>下面是我换的主题的效果图:</p>
 <img src="http://ww2.sinaimg.cn/mw690/bf2cf099gw1eba06vsbh6j20uk0jujue.jpg" width="524" height="340" />
-<p>首先从网上找到合适的 grub 主题。然后编辑 /etc/default/grub 里：</p>
+<p>首先从网上找到合适的 grub 主题。然后编辑 /etc/default/grub 里:</p>
 <pre>GRUB_THEME="/path/to/theme/theme.txt"</pre>
-<p>最后重新生成一下 grub 的配置：</p>
+<p>最后重新生成一下 grub 的配置:</p>
 <pre># grub-mkconfig -o /boot/grub/grub.cfg</pre>
 <p>配置成功的话,在重新生成配置过程中,会出现:</p>
 <pre>Found theme: /path/to/theme/theme.txt</pre>
