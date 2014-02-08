@@ -24,6 +24,8 @@ nav:
     url: /about.html
   - text: 关于我
     url: /aboutme.html
+  - text: 友情链接
+    url: /links.html
 
 #Author config
 author:
@@ -47,6 +49,11 @@ follow:
     url: https://www.facebook.com
   - class: fa fa-twitter
     url: https://twitter.com
+
+customLinks:
+  - item:
+      url: http://pixeless.sinaapp.com
+    message: Friends
 
 #googleAnaly
 googleAnaly:
