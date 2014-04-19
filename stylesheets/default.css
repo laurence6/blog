@@ -472,6 +472,15 @@ Full-Width Styles
     color: #45625d;
 }
 
+.goog-logo-link img {
+    padding: 0;
+    box-shadow: 0 0 0;
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
+    -o-box-shadow: 0 0 0;
+    -ms-box-shadow: 0 0 0;
+}
+
 /*******************************************************************************
 Small Device Styles
 *******************************************************************************/
