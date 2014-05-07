@@ -1,0 +1,44 @@
+---
+layout: post
+title: X 运行时的权限问题
+category: "linux"
+---
+<p>前几天系统升级软件，重启之后就发现 xfce 里面没办法重启关机休眠什么的了，挂载 U 盘的时候也提示要输入密码。这些以前都是不需要的，好像每一次升级软件都会出现奇怪的问题 = =。</p>
+<p>Google 一下找到了一个类似的问题。Arch wiki 上说，如果你正登录在一个本地的 systemd-logind 用户会话，且当前没有其它活动的会话，那么系统重启关机休眠等命令无需 root 权限即可执行。否则 (如当前有另一个用户登录在某个tty)，systemd 将会自动请求输入 root 密码。另一位博主写道，如果 startx 没有任何参数，那么就会分配一个新的终端，并且在新的终端里，你没有被认证。所以，现在的问题就是，如何启动 X 并且不使用一个新的 tty。该怎么做呢？现在有一个解决方法：</p>
+<pre>$ xinit -- vt01</pre>
+<p>这个可以正常工作，我可以保持我的权限，而 X 也根据 .xinitrc 里的配置正常启动了。</p>
+<p>但是，有没有更省事的方法呢，我很懒的。而且，如果是在 tty2 怎么办？我们可以这样：</p>
+<pre>
+#!/bin/bash
+
+TTY=${TTY:-$(tty)}
+TTY=${TTY#/dev/}
+
+if [[ $TTY != tty* ]]; then
+  printf '==> ERROR: invalid TTY\n' >&2
+  exit 1
+fi
+
+printf -v vt 'vt%02d' "${TTY#tty}"
+
+xinit -- "$vt" "$@"
+</pre>
+<p>这样子就简便许多了，但是仍然不够简单。</p>
+<p>接下来我们可以用到另外一个配置文件了。在系统中，.xinitrc 是用来控制 X client 的参数，而另一个文件 .xserverrc，可以放在用户的家目录下用于控制 X server 启动时的行为。在 /etc/X11/xinit/xserverrc 有其默认版本。在家目录下创建 .xserverrc，然后写入：</p>
+<pre>
+#!/bin/bash
+
+TTY=${TTY:-$(tty)}
+TTY=${TTY#/dev/}
+
+if [[ $TTY != tty* ]]; then
+  printf '==> ERROR: invalid TTY\n' >&2
+  exit 1
+fi
+
+printf -v vt 'vt%02d' "${TTY#tty}"
+
+exec /usr/bin/X -nolisten tcp "$vt" "$@"
+</pre>
+<p>现在直接运行 startx 就可以了。</p>
+<p>-END-</p>
