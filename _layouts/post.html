@@ -13,10 +13,10 @@ layout: default
 
 <nav class="article-previous fn-clear">
     {% if page.previous %}
-        <a class="prev" href="{{ page.previous.url }}" rel="bookmark">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+        <a class="prev" href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
     {% endif %}
     {% if page.next %}
-        <a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;&raquo;</a>
+        <a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
     {% endif %}
 </nav>
 
@@ -44,4 +44,4 @@ var duoshuoQuery = {short_name:"liuxy"};
     })();
 </script>
 
-<h6><a href="/">返回主页</a></h6>
+<h6><i class="fa fa-home"></i><a href="/">返回主页</a></h6>
