@@ -1,6 +1,5 @@
 baseurl: 
 permalink: /:year/:month/:day/:title
-auto: true
 pygments: true
 paginate: 20
 
