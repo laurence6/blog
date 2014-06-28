@@ -1,6 +1,6 @@
 baseurl: 
 permalink: /:year/:month/:day/:title
-pygments: true
+highlighter: pygments
 paginate: 20
 
 safe: false
