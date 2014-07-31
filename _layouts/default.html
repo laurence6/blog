@@ -28,17 +28,8 @@
             <h3 id="project_tagline">{{ site.url }}</h3>
             <nav class="nav">
                 <ul>
-                    {% for link in site.nav %}
-                    {% assign active = nil %}
-                    {% if page.url == link.url%}
-                        {% assign active = 'nav-item-active' %}
-                    {% endif %}
-                    <li class="nav-item {{ active }}">
-                        <a href="{{ link.url }}">
-                            {{ link.text }}
-                        </a>
-                        {{ indicator }}
-                    </li>
+                    {% for link in site.nav %}{% assign active = nil %}{% if page.url == link.url%}{% assign active = 'nav-item-active' %}{% endif %}
+                        <li class="nav-item {{ active }}"><a href="{{ link.url }}">{{ link.text }}</a>{{ indicator }}</li>
                     {% endfor %}
                 </ul>
             </nav>
