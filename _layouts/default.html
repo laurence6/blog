@@ -7,7 +7,6 @@
     <meta name="author" content="{{ site.author.name }}" />
     <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="google-translate-customization" content="fdd4168c96173161-1a690fc75c95b827-gebf1b21a783df2be-16"></meta>
 
     <link href="/stylesheets/default.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Spirax" rel="stylesheet" type="text/css">
@@ -33,7 +32,6 @@
                     {% endfor %}
                 </ul>
             </nav>
-            <div id="google_translate_element"></div>
         </header>
     </div>
 
@@ -66,12 +64,6 @@
         ga('create', 'UA-44812964-1', 'chit-chatting.tk');
         ga('send', 'pageview');
     </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true, gaTrack: true, gaId: 'UA-44812964-1'}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
