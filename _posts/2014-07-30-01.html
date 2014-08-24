@@ -1,21 +1,21 @@
 ---
 layout: post
 title: VPN 国内网站速度慢
-category: "软件"
+category: "计算机"
+image:
 ---
 <p>这篇文章主要讲挂着 vpn 访问国内网站速度较慢的解决方案。</p>
-<p>半个月之前，Line、Kakao、Flickr、Dropbox、OneDrive 相继在国内无法访问，Google 所有的服务以及 facebook、twitter 等在更早就已经无法访问。很多以前能用的翻墙方案现在要么不稳定要么就是完全不能用了，所以一个月前我只能买了一个 VPN。用的 GreenVPN，一个月用下来感觉速度还是不错的，至少看看 YouTube 还是能够保证流畅的，而且每个月 18 的价格也不贵，包年还能优惠不少。点击<a href="http://gjsq.me/1267870" target="_blank">这个</a>可以注册。</p>
+<p>半个月之前，Line、Kakao、Flickr、Dropbox、OneDrive 相继在国内无法访问，Google 所有的服务以及 facebook、twitter 等在更早就已经无法访问。很多以前能用的翻墙方案现在要么不稳定要么就是完全不能用了，所以一个月前我只能买了一个 VPN。用的 GreenVPN，一个月用下来感觉速度还是不错的，至少看看 YouTube 还是能够保证流畅的，而且每个月 18 的价格也不贵，包年还能优惠不少。点击<a href="http://gjsq.me/1267870" target="view_window">这个</a>可以注册。</p>
 <p>用了几天后，我发现默认情况下，所有的流量都走 VPN，国外网站是能访问了，但是国内的网站却变得慢吞吞的，所以找到了一个解决方案。chnroutes 项目用脚本做到不使用 VPN 进行对中国国内 ip 的访问，从而能够在使用 VPN 快速浏览国外网站时，快速地浏览国内网站。</p>
 <p>下面是详细的步骤:</p>
-<p>先下载<a href="https://github.com/fivesheep/chnroutes/archive/master.zip" target="_blank">这个</a>。</p>
-<h4>Mac OSX:</h4>
+<p>先下载<a href="https://github.com/fivesheep/chnroutes/archive/master.zip" target="view_window">这个</a>。</p>
+<h3>Mac OSX:</h3>
 <p>1. 解压后，用终端在解压后的目录执行<code>python chnroutes.py -p mac</code></p>
 <p>2. 执行完毕之后同一目录下将生成两个新文件 "ip-up" 和 "ip-down"，把这两个文件复制到 /etc/ppp 目录, 并执行<code>sudo chmod a+x ip-up ip-down</code></p>
 <p>3. 重新连接 VPN。</p>
-<h4>Linux:</h4>
+<h3>Linux:</h3>
 <p>1. 解压后，用终端在解压后的目录执行<code>python chnroutes.py -p linux</code></p>
 <p>2. 执行完毕之后同一目录下将生成两个新文件 "ip-pre-up" 和 "ip-down"，把 "ip-pre-up" 复制到 /etc/ppp 目录, "ip-down" 复制到 /etc/ppp/ip-down.d 目录，并执行<code>sudo chmod a+x</code></p>
 <p>3. 重新连接 VPN。</p>
 <p>噢，one more thing，前段时间还看到一个好东西，把 DNS 地址改成 42.120.21.30 可以直接翻墙。我测试过了，可以直接访问 Google、facebook、twitter 等。</p>
 <p>月光博客写道:"<em>看着那些国外的优秀工具一个个被屏蔽，不得不感叹，这是最好的时代，这是最坏的时代，这是希望的春天，也是失望的冬天。我们正处在一个伟大的时代，十几年的互联网飞速发展深刻地改变着这个世界，一场规模浩大的互联网革命正拉开序幕。一个个年轻的企业创造了美国硅谷的奇迹，而我们，却将这个世界上伟大的科技企业谷歌、微软、苹果等等屏蔽在外，闭关锁国，过着困守孤岛的土著人一样的生活，我们这些互联网从业者只能扒开墙头看着外面日新月异的世界不断发展，看着一个个崭新的科技奇迹在外面诞生，这不仅仅是国内这些科技企业的悲哀，也是整个国家的悲哀。这是个最好的时代，而我却看不到未来，也看不到希望。</em>"</p>
-<p>-END-</p>
