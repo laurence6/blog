@@ -1,7 +1,8 @@
 baseurl: 
 permalink: /:year/:month/:day/:title
 highlighter: pygments
-paginate: 20
+paginate: 5
+paginate_path: "/page:num"
 
 safe: false
 
@@ -17,14 +18,18 @@ favicon: /images/icon.ico
 nav:
   - text: 首页
     url: /index.html
-  - text: 分类目录
+  - text: 分类
     url: /categories.html
+  - text: 标签
+    url: /tags.html
   - text: 关于本站
     url: /about.html
   - text: 关于我
     url: /aboutme.html
   - text: 友情链接
     url: /links.html
+  - text: '<i class="fa fa-rss"></i>RSS'
+    url: /atom.xml
 
 #Author config
 author:
@@ -36,17 +41,17 @@ author:
 
 #Follow me
 follow:
-  - class: fa fa-rss
+  - class: fa fa-rss fa-lg
     url: /atom.xml
-  - class: fa fa-weibo
+  - class: fa fa-weibo fa-lg
     url: http://t.qq.com
-  - class: fa fa-github
+  - class: fa fa-github fa-lg
     url: https://github.com/laurence6
-  - class: fa fa-google-plus
+  - class: fa fa-google-plus fa-lg
     url: https://plus.google.com
-  - class: fa fa-facebook
+  - class: fa fa-facebook fa-lg
     url: https://www.facebook.com
-  - class: fa fa-twitter
+  - class: fa fa-twitter fa-lg
     url: https://twitter.com
 
 customLinks:
