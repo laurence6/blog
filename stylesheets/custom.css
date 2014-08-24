@@ -1,0 +1,152 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  background: url(/images/bg.jpg);
+  background-attachment: fixed;
+}
+
+p {
+  text-indent: 32px;
+}
+
+.translucent {
+  background: rgba(238,238,238,0.85);
+  box-shadow: 0 3px 10px #eeeeee;
+}
+.translucent-box {
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #eeeeee;
+}
+
+#main-content {
+  margin-top: 80px;
+  margin-bottom: 6%;
+  padding-bottom: 60px;
+  border-radius: 10px;
+}
+
+#gotop {
+  display: none;
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  right: 20%;
+  bottom: 3%;
+  z-index: 1000;
+  background: url(/images/backtop.png) no-repeat -70px 0px;
+}
+
+.btn {
+  border-radius: 20px;
+}
+
+.navbar-inverse {
+  background: rgba(0,0,0,0.6);
+}
+
+.navbar-nav {
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  float: none;
+}
+
+footer {
+  padding-left: 0;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
