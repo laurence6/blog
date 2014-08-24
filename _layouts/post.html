@@ -1,21 +1,33 @@
 ---
 layout: default1
 ---
-<div class="info">
-    <span class="info-title"><i class="fa fa-calendar"></i> 发布: </span>
-    <span class="info-date">{{ page.date | date_to_string }}</span>
-    <span class="info-title"><i class="fa fa-folder-open"></i> 分类: </span>
-    <span class="info-link"><a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span>
-    <span class="info-link"><i class="fa fa-comments-o"></i><a href="#ds-thread"> 评论 </a></span>
-</div>
+<h4 class="col-md-12 text-center">
+    <span class="label label-primary"><i class="fa fa-calendar"></i>发布: {{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span>
+    <span class="label label-info"><i class="fa fa-folder-open"></i>分类: <a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span>
+</h4>
+<h4 class="col-md-12 text-center">
+    {% for tag in page.tags %}<span class="label label-info"><a href="/tags.html/#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}
+</h4>
+<h4 class="col-md-12 text-center">
+    <a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i>评论&nbsp;&nbsp;</button></a>
+</h4>
+
 {{ content }}
 
-<nav class="article-previous fn-clear">
+<hr class="col-md-12 featurette-divider">
+
+<div>
+    <ul class="pager">
     {% if page.previous %}
-        <a class="prev" href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a>
+        <li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a></li>
+    {% else %}
+        <li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i>&nbsp;没有上一篇了</a></li>
     {% endif %}
     {% if page.next %}
-        <a class="next" href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+        <li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+    {% else %}
+        <li class="next disabled"><a>没有下一篇了&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
     {% endif %}
-    <h6 style="text-align:center"><i class="fa fa-home"></i><a href="/">返回主页</a></h6>
-</nav>
+    </ul>
+    <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i>返回主页</button></a></div>
+</div>

@@ -1,22 +1,44 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
+<div class="row">
 
-{{ content }}
+<div class="col-md-10 col-sm-12 col-xs-12">
 
-<div class="jiathis_style_24x24">
-    <a class="jiathis_button_qzone"></a>
-    <a class="jiathis_button_tsina"></a>
-    <a class="jiathis_button_tqq"></a>
-    <a class="jiathis_button_weixin"></a>
-    <a class="jiathis_button_renren"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-    <a class="jiathis_counter_style"></a>
+    <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
+
+    {{ content }}
+
+    <hr class="featurette-divider">
+
+    <div class="col-md-12 jiathis_style_24x24">
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_renren"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="view_window"></a>
+        <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992" charset="utf-8"></script>
+
+    <div class="col-md-12 ds-thread"></div>
+
 </div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992" charset="utf-8"></script>
 
-<div class="ds-thread"></div>
+<div class="col-md-2 visible-md-block visible-lg-block">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">本站二维码</h3>
+        </div>
+        <div class="panel-body row">
+             <img class="thumbnail col-md-12 col-sm-12 col-xs-12" src="/images/QR.png">
+        </div>
+    </div>
+</div>
+
+</div>
+
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"liuxy"};
     (function() {
@@ -28,5 +50,3 @@ var duoshuoQuery = {short_name:"liuxy"};
         || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-
-<h6><a href="/">返回主页</a></h6>
