@@ -3,38 +3,36 @@ layout: default
 boxlst: boxlst
 ---
 {% for post in paginator.posts %}
-    <div class="col-md-12 row featurette translucent-box" style="margin-bottom: 10%; padding-bottom: 5%">
-        {% if post.image %}<div class="col-md-7 row">{% else %}<div class="col-md-12 row">{% endif %}
-            <h2 class="featurette-heading col-md-12"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="lead col-md-6 col-xs-12"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span></p>
-<!--        <p class="lead">{{ post.description }}</p>-->
-            <p class="lead col-md-6 col-xs-12">{% for tag in post.tags %}<span class="label label-info"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</p>
-<!--        <a href="{{ site.baseurl }}{{ post.url }}"><button type="button" class="btn btn-primary">阅读全文</button></a>-->
-        </div>
-        {% if post.image %}
-        <div class="col-md-5">
-            <img class="featurette-image img-responsive thumbnail" src="{{ post.image }}">
-        </div>
-        {% endif %}
-    </div>
+  <div class="col-md-12 row featurette translucent-box" style="margin-bottom: 10%; padding-bottom: 5%">
+    {% if post.image %}<div class="col-md-7 row">{% else %}<div class="col-md-12 row">{% endif %}
+    <h2 class="featurette-heading col-md-12"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="lead col-md-6 col-xs-12"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span></p>
+    <p class="lead col-md-6 col-xs-12">{% for tag in post.tags %}<span class="label label-info"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</p>
+  </div>
+  {% if post.image %}
+  <div class="col-md-5">
+    <img class="featurette-image img-responsive thumbnail" src="{{ post.image }}">
+  </div>
+  {% endif %}
+  </div>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-<div class="pagination">
-    {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a></li>
-    {% endif %}
-    {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-            <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
-        {% elsif page == 1 %}
-            <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-        {% else %}
-            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-        {% endif %}
-    {% endfor %}
-    {% if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a></li>
-    {% endif %}
-</div>
+<ul class="pagination">
+  {% if paginator.previous_page %}
+  <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a></li>
+  {% endif %}
+  {% for page in (1..paginator.total_pages) %}
+  {% if page == paginator.page %}
+  <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
+  {% elsif page == 1 %}
+  <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+  {% else %}
+  <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+  {% endif %}
+  {% endfor %}
+  {% if paginator.next_page %}
+  <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a></li>
+  {% endif %}
+</ul>
 {% endif %}

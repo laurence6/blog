@@ -54,7 +54,7 @@ follow:
   - class: fa fa-twitter fa-lg
     url: https://twitter.com
 
-customLinks:
+customlinks:
   - item:
     message: Friends
 

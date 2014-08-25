@@ -4,23 +4,23 @@ boxlst: boxlst
 title: 分类
 ---
 <div>
-    <div class="col-md-12 row translucent-box" style="margin-bottom: 10%; padding-bottom: 5%">
-        <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
-        <ul>
-            {% for category in site.categories %}
-                <li><a class="lead" href="#{{ category[0] }}-ref">{{ category[0] | join: "/" }} </a><span class="badge">{{ category | last | size }}</span></li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% for category in site.categories %}
-    <div class="col-md-12 row translucent-box" style="margin-bottom: 10%; padding-top: 8%" id="{{ category[0] }}-ref">
-        <h2>{{ category[0] | join: "/" }}</h2>
-        <ul style="list-style: none">
-            {% assign pages_list = category[1] %}
-            {% for node in pages_list %}{% if node.title != null %}{% if group == null or group == node.group %}
-            <li><span class="lead" style="font-family:monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo; <a class="lead col-xs-12" href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
-            {% endif %}{% endif %}{% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
+  <div class="col-md-12 row translucent-box" style="margin-bottom: 10%; padding-bottom: 5%">
+    <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
+    <ul>
+      {% for category in site.categories %}
+      <li><a class="lead" href="#{{ category[0] }}-ref">{{ category[0] | join: "/" }} </a><span class="badge">{{ category | last | size }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% for category in site.categories %}
+  <div class="col-md-12 row translucent-box" style="margin-bottom: 10%; padding-top: 8%" id="{{ category[0] }}-ref">
+    <h2>{{ category[0] | join: "/" }}</h2>
+    <ul style="list-style: none">
+      {% assign pages_list = category[1] %}
+      {% for node in pages_list %}{% if node.title != null %}{% if group == null or group == node.group %}
+      <li><span class="lead" style="font-family:monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo; <a class="lead col-xs-12" href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
+      {% endif %}{% endif %}{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
 </div>

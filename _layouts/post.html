@@ -2,32 +2,29 @@
 layout: default1
 ---
 <h4 class="col-md-12 text-center">
-    <span class="label label-primary"><i class="fa fa-calendar"></i>发布: {{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span>
-    <span class="label label-info"><i class="fa fa-folder-open"></i>分类: <a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span>
+  <span class="label label-primary"><i class="fa fa-calendar"></i>发布: {{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span>
+  <span class="label label-info"><i class="fa fa-folder-open"></i>分类: <a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span>
 </h4>
 <h4 class="col-md-12 text-center">
-    {% for tag in page.tags %}<span class="label label-info"><a href="/tags.html/#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}
+  {% for tag in page.tags %}<span class="label label-info"><a href="/tags.html/#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}
 </h4>
 <h4 class="col-md-12 text-center">
-    <a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i>评论&nbsp;&nbsp;</button></a>
+  <a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i>评论&nbsp;&nbsp;</button></a>
 </h4>
-
 {{ content }}
-
 <hr class="col-md-12 featurette-divider">
-
 <div>
-    <ul class="pager">
+  <ul class="pager">
     {% if page.previous %}
-        <li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a></li>
+    <li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a></li>
     {% else %}
-        <li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i>&nbsp;没有上一篇了</a></li>
+    <li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i>&nbsp;没有上一篇了</a></li>
     {% endif %}
     {% if page.next %}
-        <li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+    <li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
     {% else %}
-        <li class="next disabled"><a>没有下一篇了&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
+    <li class="next disabled"><a>没有下一篇了&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
     {% endif %}
-    </ul>
-    <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i>返回主页</button></a></div>
+  </ul>
+  <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i>返回主页</button></a></div>
 </div>
