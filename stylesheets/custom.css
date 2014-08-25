@@ -18,7 +18,7 @@ p {
 .translucent-box {
   background: rgba(255,255,255,0.7);
   border-radius: 10px;
-  box-shadow: 0 3px 10px #eeeeee;
+  box-shadow: 0 0 6px #eeeeee;
 }
 
 #main-content {
@@ -26,17 +26,6 @@ p {
   margin-bottom: 6%;
   padding-bottom: 60px;
   border-radius: 10px;
-}
-
-#gotop {
-  display: none;
-  width: 55px;
-  height: 55px;
-  position: fixed;
-  right: 20%;
-  bottom: 3%;
-  z-index: 1000;
-  background: url(/images/backtop.png) no-repeat -70px 0px;
 }
 
 .btn {
@@ -54,8 +43,35 @@ p {
   float: none;
 }
 
-footer {
-  padding-left: 0;
+.returnTop {
+  position: fixed;
+  right: 20%;
+  bottom: 3%;
+  display: none;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius:4px;
+  background: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+.returnTop .a {
+  position: absolute;
+  top: -2px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-color: transparent transparent rgba(255,255,255,0.75);
+  border-style: dashed dashed solid;
+}
+.returnTop .b {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  height: 12px;
+  width: 8px;
+  background: rgba(255,255,255,0.75);
 }
 
 
