@@ -40,7 +40,7 @@
               <ul class="nav navbar-nav">
                 {% for link in site.nav %}{% assign active = nil %}{% if page.url == link.url %}{% assign active = 'active' %}{% endif %}
                 {% if link.url == '/categories.html' %}
-                <li class="{{ active }} dropdown visible-md-block visible-lg-block">
+                <li class="{{ active }} dropdown hidden-xs">
                   <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ link.text }} <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li class="{{ active }}"><a href="{{ link.url }}">全部分类</a></li>
@@ -51,7 +51,7 @@
                     {% endfor %}
                   </ul>
                 </li>
-                <li class="{{ active }} visible-xs-block visible-sm-block"><a href="{{ link.url }}">{{ link.text }}</a></li>
+                <li class="{{ active }} visible-xs-block"><a href="{{ link.url }}">{{ link.text }}</a></li>
                 {% else %}
                 <li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
                 {% endif %}
@@ -63,10 +63,10 @@
       </div>
     </div>
 
-    <div class="col-md-2 visible-md-block visible-lg-block"></div>
+    <div class="col-md-2 visible-md-block visible-lg-block"></div><div class="col-sm-1 visible-sm-block"></div>
 
     {% if page.boxlst == 'boxlst' %}{% assign main-content-translucent = nil %}{% else %}{% assign main-content-translucent = 'translucent' %}{% endif %}
-    <div class="container marketing col-xs-12 col-sm-12 col-md-8 {{ main-content-translucent }}" id="main-content">
+    <div class="container marketing col-xs-12 col-sm-10 col-md-8 {{ main-content-translucent }}" id="main-content">
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
       <hr class="featurette-divider col-md-12">

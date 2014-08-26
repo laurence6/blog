@@ -3,17 +3,17 @@ layout: default
 boxlst: boxlst
 ---
 {% for post in paginator.posts %}
-  <div class="col-md-12 row featurette translucent-box" style="margin-bottom: 10%; padding-bottom: 5%">
-    {% if post.image %}<div class="col-md-7 row">{% else %}<div class="col-md-12 row">{% endif %}
-    <h2 class="featurette-heading col-md-12"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="lead col-md-6 col-xs-12"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span></p>
-    <p class="lead col-md-6 col-xs-12">{% for tag in post.tags %}<span class="label label-info"><i class="fa fa-tag" style="display: inline"></i><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</p>
-  </div>
-  {% if post.image %}
-  <div class="col-md-5">
-    <img class="featurette-image img-responsive thumbnail" src="{{ post.image }}">
-  </div>
-  {% endif %}
+  <div class="col-md-12 row featurette translucent-box">
+    {% if post.image %}<div class="col-md-7">{% else %}<div class="col-md-12">{% endif %}
+    <h2 class="featurette-heading"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="lead"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span></p>
+    <p class="lead">{% for tag in post.tags %}<span class="label label-info"><i class="fa fa-tag" style="display: inline"></i><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</p>
+    </div>
+    {% if post.image %}
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive thumbnail" src="{{ post.image }}">
+    </div>
+    {% endif %}
   </div>
 {% endfor %}
 
