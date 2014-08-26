@@ -16,19 +16,19 @@ favicon: /images/icon.ico
 
 #Nav config
 nav:
-  - text: 首页
+  - text: <i class="fa fa-home fa-fw"></i>首页
     url: /index.html
-  - text: 分类
+  - text: <i class="fa fa-folder-open fa-fw"></i>分类
     url: /categories.html
-  - text: 标签
+  - text: <i class="fa fa-tags fa-fw"></i>标签
     url: /tags.html
-  - text: 关于本站
+  - text: <i class="fa fa-info fa-fw"></i>关于本站
     url: /about.html
-  - text: 关于我
+  - text: <i class="fa fa-user fa-fw"></i>关于我
     url: /aboutme.html
-  - text: 友情链接
+  - text: <i class="fa fa-link fa-fw"></i>友情链接
     url: /links.html
-  - text: '<i class="fa fa-rss"></i>RSS'
+  - text: <i class="fa fa-rss fa-fw"></i>RSS
     url: /atom.xml
 
 #Author config
@@ -44,11 +44,9 @@ follow:
   - class: fa fa-rss fa-lg
     url: /atom.xml
   - class: fa fa-weibo fa-lg
-    url: http://t.qq.com
+    url: http://weibo.com/u/3207393433
   - class: fa fa-github fa-lg
     url: https://github.com/laurence6
-  - class: fa fa-google-plus fa-lg
-    url: https://plus.google.com
   - class: fa fa-facebook fa-lg
     url: https://www.facebook.com
   - class: fa fa-twitter fa-lg

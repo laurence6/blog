@@ -26,10 +26,6 @@ p {
   border-radius: 10px;
 }
 
-.btn {
-  border-radius: 20px;
-}
-
 .navbar-inverse {
   background: rgba(0,0,0,0.6);
 }
@@ -43,31 +39,31 @@ p {
 
 .returnTop {
   position: fixed;
-  right: 20%;
+  right: 19%;
   bottom: 3%;
   display: none;
   z-index: 1000;
-  width: 40px;
-  height: 40px;
-  border-radius:4px;
+  width: 50px;
+  height: 50px;
+  border-radius:5px;
   background: rgba(0,0,0,0.6);
   cursor: pointer;
 }
 .returnTop .a {
   position: absolute;
   top: -2px;
-  left: 10px;
+  left: 12.5px;
   width: 0;
   height: 0;
-  border-width: 10px;
+  border-width: 12.5px;
   border-color: transparent transparent rgba(255,255,255,0.75);
   border-style: dashed dashed solid;
 }
 .returnTop .b {
   position: absolute;
-  top: 18px;
-  left: 16px;
-  height: 12px;
+  top: 22px;
+  left: 21px;
+  height: 15px;
   width: 8px;
   background: rgba(255,255,255,0.75);
 }
