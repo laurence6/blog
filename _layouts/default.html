@@ -47,7 +47,7 @@
                     <li class="divider"></li>
                     {% assign categories_list = site.categories %}
                     {% for category in categories_list %}
-                    <li><a href="{{ link.url }}#{{ category[0] }}-ref">{{ category[0] | join: "/" }}</a></li>
+                    <li><a href="{{ link.url }}#{{ category[0] }}-ref"><i class="fa fa-folder-open"></i> {{ category[0] | join: "/" }}</a></li>
                     {% endfor %}
                   </ul>
                 </li>
