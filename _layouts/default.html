@@ -63,10 +63,8 @@
       </div>
     </div>
 
-    <div class="col-md-2 visible-md-block visible-lg-block"></div><div class="col-sm-1 visible-sm-block"></div>
-
     {% if page.boxlst == 'boxlst' %}{% assign main-content-translucent = nil %}{% else %}{% assign main-content-translucent = 'translucent' %}{% endif %}
-    <div class="container marketing col-xs-12 col-sm-10 col-md-8 {{ main-content-translucent }}" id="main-content">
+    <div class="container marketing col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 {{ main-content-translucent }}" id="main-content">
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
       <hr class="featurette-divider col-md-12">
