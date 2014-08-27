@@ -34,7 +34,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">Liu's Blog</a>
+              <a class="navbar-brand" href="/">{{ site.title }}</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -64,10 +64,10 @@
     </div>
 
     {% if page.boxlst == 'boxlst' %}{% assign main-content-translucent = nil %}{% else %}{% assign main-content-translucent = 'translucent' %}{% endif %}
-    <div class="container marketing col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 {{ main-content-translucent }}" id="main-content">
+    <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 {{ main-content-translucent }}" id="main-content">
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
-      <hr class="featurette-divider col-md-12">
+      <hr class="featurette-divider">
       <footer>
         <div class="text-center">
             {% for link in site.follow %}
