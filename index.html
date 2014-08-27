@@ -5,9 +5,9 @@ boxlst: boxlst
 {% for post in paginator.posts %}
 <div class="col-md-12 row featurette translucent-box">
   {% if post.image %}<div class="col-md-7">{% else %}<div class="col-md-12">{% endif %}
-    <h2 class="featurette-heading"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-    <p class="lead"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span></p>
-    <p class="lead">{% for tag in post.tags %}<span class="label label-info"><i class="fa fa-tag" style="display: inline"></i> <a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</p>
+    <h2 class="featurette-heading text-center"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    <h4 class="text-center"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span></h4>
+    <h4 class="text-center">{% for tag in post.tags %}<span class="label label-info"><i class="fa fa-tag" style="display: inline"></i> <a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</h4>
   </div>
   {% if post.image %}
   <div class="col-md-5"><a class="thumbnail"><img class="featurette-image img-responsive" src="{{ post.image }}" /></a></div>
