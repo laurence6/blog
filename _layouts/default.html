@@ -3,19 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="{{ site.author.name }}" />
-    <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-    <link href="{{ site.favicon }}" rel="shortcut icon" type="image/x-icon" />
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ',' }}{% else %}{{ site.keywords | join: ',' }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link href="{{ site.favicon }}" rel="shortcut icon" type="image/x-icon">
 
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/custom.css" rel="stylesheet">
     <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
-
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>
     <script>$(function(){$(window).scroll(function(e){if($(window).scrollTop()>20)$("div.returnTop").fadeIn(1000);else $("div.returnTop").fadeOut(1000)});$("div.returnTop").click(function(){$("body, html").animate({scrollTop:0},500)})});</script>

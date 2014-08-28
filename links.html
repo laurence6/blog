@@ -2,11 +2,4 @@
 layout: default1
 title: 友情链接
 ---
-{% for link in site.customlinks %}
-<h4>{{ link.message }}</h4>
-<ul>
-  {% for item in link.item %}
-  <li><a href="{{ item.url }}" target="_blank">{{ item.text }}</a></li>
-  {% endfor %}
-</ul>
-{% endfor %}
+<ul>{% for link in site.links %}<li><a href="{{ link.url }}" target="view_window">{{ link.text }}</a></li>{% endfor %}</ul>

@@ -8,7 +8,7 @@ safe: false
 
 #Site config
 title: Liu's Blog
-keywords: Liu's Blog
+keywords: ["Liu's Blog", "computer", "life"]
 description: Liu's Blog：http://blog.chit-chatting.tk/
 url: http://blog.chit-chatting.tk/
 feed: /atom.xml
@@ -35,9 +35,6 @@ nav:
 author:
     name: Liu
     email: liuxy6@gmail.com
-    imageLink: http://ww3.sinaimg.cn/mw690/bf2cf099gw1ebigbjo6x1j20go0gomz0.jpg
-    simpleIntro: 我是 Liu，一名普通的高中生。
-    detailIntro:
 
 #Follow me
 follow:
@@ -52,11 +49,4 @@ follow:
   - class: fa fa-twitter fa-lg
     url: https://twitter.com
 
-customlinks:
-  - item:
-    message: Friends
-
-#googleAnaly
-googleAnaly:
-  config: true
-  id: UA-44812964-1
+links:
