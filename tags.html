@@ -7,7 +7,7 @@ title: 标签
   <div class="col-md-12 row translucent-box">
     <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
     {% for tag in site.tags %}
-    <h4 class="col-lg-3 col-md-3 col-sm-4 col-xs-6"><span class="label label-info"><i class="fa fa-tag" style="display: inline"></i> <a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
+    <h5 class="col-lg-3 col-md-4 col-sm-4 col-xs-6 lead"><span class="label label-info"><i class="fa fa-tag" style="display: inline"></i> <a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h5>
     {% endfor %}
   </div>
   {% for tag in site.tags %}
