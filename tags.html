@@ -15,7 +15,7 @@ title: 标签
     <h2><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h2>
     <ul style="list-style: none">
       {% for node in tag[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
-      <li class="row"><span class="lead col-md-4 col-sm-5 col-xs-12" style="font-family:monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="lead col-md-8 col-sm-7 col-xs-12"><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
+      <li class="row"><span class="lead col-md-4 col-sm-5 col-xs-12" style="font-family: monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="lead col-md-8 col-sm-7 col-xs-12"><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
       {% endif %}{% endif %}{% endfor %}
     </ul>
   </div>

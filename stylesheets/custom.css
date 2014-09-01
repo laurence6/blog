@@ -83,14 +83,33 @@ p {
   letter-spacing: -1px;
 }
 
+.site-title-div {
+  border: 2px solid #fff;
+  color: #fff;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 50px;
+}
+
+.site-title {
+  font-weight: 700;
+  font-size: 60px;
+}
+
 @media (min-width: 768px) {
   .featurette-heading {
     font-size: 50px;
+  }
+  .site-title {
+    font-size: 100px;
   }
 }
 
 @media (min-width: 992px) {
   .featurette-heading {
     margin-top: 120px;
+  }
+  .site-title {
+    font-size: 150px;
   }
 }
