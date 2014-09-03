@@ -45,8 +45,10 @@ follow:
   - class: fa fa-github fa-lg
     url: https://github.com/laurence6
   - class: fa fa-facebook fa-lg
-    url: https://www.facebook.com
+    url: https://www.facebook.com/
   - class: fa fa-twitter fa-lg
-    url: https://twitter.com
+    url: https://twitter.com/
 
 links:
+  - item:
+    message: 朋友
