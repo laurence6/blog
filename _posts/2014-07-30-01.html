@@ -10,11 +10,11 @@ image:
 <p>用了几天后，我发现默认情况下，所有的流量都走 VPN，国外网站是能访问了，但是国内的网站却变得慢吞吞的，所以找到了一个解决方案。chnroutes 项目用脚本做到不使用 VPN 进行对中国国内 ip 的访问，从而能够在使用 VPN 快速浏览国外网站时，快速地浏览国内网站。</p>
 <p>下面是详细的步骤:</p>
 <p>先下载<a href="https://github.com/fivesheep/chnroutes/archive/master.zip" target="view_window">这个</a>。</p>
-<h3>Mac OSX:</h3>
+<h2>Mac OSX:</h2>
 <p>1. 解压后，用终端在解压后的目录执行<code>python chnroutes.py -p mac</code></p>
 <p>2. 执行完毕之后同一目录下将生成两个新文件 "ip-up" 和 "ip-down"，把这两个文件复制到 /etc/ppp 目录, 并执行<code>sudo chmod a+x ip-up ip-down</code></p>
 <p>3. 重新连接 VPN。</p>
-<h3>Linux:</h3>
+<h2>Linux:</h2>
 <p>1. 解压后，用终端在解压后的目录执行<code>python chnroutes.py -p linux</code></p>
 <p>2. 执行完毕之后同一目录下将生成两个新文件 "ip-pre-up" 和 "ip-down"，把 "ip-pre-up" 复制到 /etc/ppp 目录, "ip-down" 复制到 /etc/ppp/ip-down.d 目录，并执行<code>sudo chmod a+x</code></p>
 <p>3. 重新连接 VPN。</p>
