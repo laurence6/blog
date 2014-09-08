@@ -1,4 +1,4 @@
-baseurl: 
+baseurl:
 permalink: /:year/:month/:day/:title
 highlighter: pygments
 paginate: 5

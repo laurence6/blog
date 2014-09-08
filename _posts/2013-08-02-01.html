@@ -6,9 +6,9 @@ tags: ["linux", "arch linux"]
 image: http://ww2.sinaimg.cn/mw690/bf2cf099jw1e7uhcyb4agj20au0af0tb.jpg
 ---
 <p>上周五我就决定尝试一下 arch linux，前几天去了一趟上海，回来之后一直没有什么时间来折腾。今天终于把它安装好了并装了一些我平时会用到的软件。</p>
-<p>在打算尝试 arch linux 后，我跑到它的官网拖了一个 2013.07.01 的 iso 回来。 iso 文件不是很大，只有 500MB+ 。天气很热，我脑袋一热，备份了关键的配置文件就把 debian 根目录的分区格了。然后 grub 进不去了...只好用急救盘重建 MBR 进 windows。然后需要将 arch linux 的 iso 文件刻录到一个u盘里。以前很多次在 windows 下用软碟通刻u盘，这次也就用了 windows 下留着的软碟通。几分钟后刻录好了，重启，用u盘引导进入安装程序。然后，就出问题了...我无法开始安装，各种尝试后还是无法开始安装。我以为刻录有问题，但是在重新刻录并校验， iso 文件的 MD5 都检查过后，问题还是没有解决。于是 google 了一下，发现也有人遇到了同样的问题，是软碟通刻录的u盘不能用= =换了一个能用的刻录软件后终于能开始安装了。</p>
+<p>在打算尝试 arch linux 后，我跑到它的官网拖了一个 2013.07.01 的 iso 回来。 iso 文件不是很大，只有 500MB+。天气很热，我脑袋一热，备份了关键的配置文件就把 debian 根目录的分区格了。然后 grub 进不去了...只好用急救盘重建 MBR 进 windows。然后需要将 arch linux 的 iso 文件刻录到一个u盘里。以前很多次在 windows 下用软碟通刻u盘，这次也就用了 windows 下留着的软碟通。几分钟后刻录好了，重启，用u盘引导进入安装程序。然后，就出问题了...我无法开始安装，各种尝试后还是无法开始安装。我以为刻录有问题，但是在重新刻录并校验， iso 文件的 MD5 都检查过后，问题还是没有解决。于是 google 了一下，发现也有人遇到了同样的问题，是软碟通刻录的u盘不能用= =换了一个能用的刻录软件后终于能开始安装了。</p>
 <p>开始安装后进入了一个命令行...额，看着 arch wiki，一步一步往下装。先建立并格式化分区，挂载到 /mnt。接着连接网络。然后更改首选的镜像，安装基本系统，生成 fstab。 chroot 到新的系统，并配置新的系统，语言、时区、时钟、网络、 root 密码...最后安装 grub。</p>
-<p>重启后，开始安装X，还有 xfce4 、 slim。安装完了这些后，发现 pacman 真的好快！特别快！绝大部分的时间都是花在下载上面了，安装的时候有的软件包一瞬间就安装好了，我和我的小伙伴们都惊呆了...</p>
+<p>重启后，开始安装X，还有 xfce4、 slim。安装完了这些后，发现 pacman 真的好快！特别快！绝大部分的时间都是花在下载上面了，安装的时候有的软件包一瞬间就安装好了，我和我的小伙伴们都惊呆了...</p>
 <p>然后安装一些平时要用到的软件。首先是输入法。我选了 fcitx+sunpinyin+cloudpinyin。还要在 ~/.xinitrc 中加入:</p>
 <pre>
 export GTK_IM_MODULE=fcitx
@@ -16,6 +16,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 </pre>
 <p>但是在我加入之后，却还是用不了。折腾几回后，又重新去看 wiki。终于发现这些要放在 exec startxfce4 前面...</p>
-<p>然后我需要安装一个浏览器，我比较喜欢 chrome。在官方源里只有 chromium， google 官方也没有为 arch linux 提供编译好的安装包。 google 了一下，看到要用 AUR 来安装 chrome。了解了一下 AUR ，和郭靖说的一样，它和 ubuntu 的 PPA 很像。首先需要安装 yaourt，添加 yaourt 源至 /etc/pacman.conf ,然后就能用 pacman 安装了。 yaourt 的用法和 pacman 差不多， AUR 里有很多各种各样的软件。很快就完成 chrome 的安装。后面还安装了 libreoffice 、 pidgin 、 lwqq 、 audacious 、 vlc ...我甚至还在 AUR 里找到了 yunio。 yunio 是一个云存储，跨平台的，可用于 windows 、 mac os x 、 linux 、 ios 、 android，而且现在还免费送 60G 存储空间 (额这应该不算广告吧...) 。</p>
+<p>然后我需要安装一个浏览器，我比较喜欢 chrome。在官方源里只有 chromium， google 官方也没有为 arch linux 提供编译好的安装包。 google 了一下，看到要用 AUR 来安装 chrome。了解了一下 AUR，和郭靖说的一样，它和 ubuntu 的 PPA 很像。首先需要安装 yaourt，添加 yaourt 源至 /etc/pacman.conf ,然后就能用 pacman 安装了。 yaourt 的用法和 pacman 差不多， AUR 里有很多各种各样的软件。很快就完成 chrome 的安装。后面还安装了 libreoffice、 pidgin、 lwqq、 audacious、 vlc ...我甚至还在 AUR 里找到了 yunio。 yunio 是一个云存储，跨平台的，可用于 windows、 mac os x、 linux、 ios、 android，而且现在还免费送 60G 存储空间 (额这应该不算广告吧...)。</p>
 <p>我觉得总体来说 arch linux 还是很令人满意的，以后我就会将 arch linux 当作日常使用的发行版了。</p>
-<a class="thumbnail" href="https://www.archlinux.org/" target="view_window"><img src="http://ww2.sinaimg.cn/mw690/bf2cf099jw1e7uhcyb4agj20au0af0tb.jpg" width="390" height="375" /></a>
+<a class="thumbnail" href="https://www.archlinux.org/" target="view_window"><img src="http://ww2.sinaimg.cn/mw690/bf2cf099jw1e7uhcyb4agj20au0af0tb.jpg" /></a>
