@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=46520f2bae6d35df99d4)
- * Config saved to config.json and https://gist.github.com/46520f2bae6d35df99d4
+ * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=c8419f5302428b7b7daf)
+ * Config saved to config.json and https://gist.github.com/c8419f5302428b7b7daf
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -275,7 +275,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Lucida Grande", Calibri, Helvetica, Arial, "华文细黑", "STXihei", "微软雅黑", "Microsoft YaHei", "文泉驿正黑", "WenQuanYi Zen Hei", sans-serif;
+  font-family: "DIN Next Ultra Light", "Helvetica Neue", Helvetica, "Lantinghei SC", "Hiragino Sans GB", STHeiti, "Noto Sans S Chinese", "Microsoft YaHei", "Microsoft Sans Serif", "WenQuanYi Zen Hei", sans-serif;
   font-size: 16px;
   line-height: 1.8;
   color: #333333;
@@ -372,7 +372,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: "DIN Next Ultra Light", "Helvetica Neue", Helvetica, "Lantinghei SC", "Hiragino Sans GB", STHeiti, "Noto Sans S Chinese", "Microsoft YaHei", "Microsoft Sans Serif", "WenQuanYi Zen Hei", sans-serif;
   font-weight: 500;
   line-height: 1.8;
   color: inherit;
