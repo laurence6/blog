@@ -2,7 +2,7 @@
 layout: default1
 ---
 <h4 class="col-md-12 text-center"><span class="label label-primary"><i class="fa fa-calendar"></i>发布: {{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span> <span class="label label-info"><i class="fa fa-folder-open"></i>分类: <a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span></h4>
-<h4 class="col-md-12 text-center">{% for tag in page.tags %}<span class="label label-info"><i class="fa fa-tag"></i><a href="/tags.html/#{{ tag }}-ref">{{ tag | join: "/" }}</a></span> {% endfor %}</h4>
+<h4 class="col-md-12 text-center">{% for tag in page.tags %}<span class="label label-info"><i class="fa fa-tag"></i><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</a></span> {% endfor %}</h4>
 <h4 class="col-md-12 text-center"><a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i> 评论&nbsp;&nbsp;</button></a></h4>
 {{ content }}
 <hr class="featurette-divider">
