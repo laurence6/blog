@@ -5,15 +5,13 @@ layout: default
 <div class="col-md-9 col-sm-10 col-sm-push-1 col-xs-12">
   <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
   {{ content }}
-  <hr class="featurette-divider">
-  <div class="col-md-12 jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="view_window"></a><a class="jiathis_counter_style"></a></div>
-  <div class="col-md-12 ds-thread"></div>
+  {% if site.jiathis.config %}<hr class="featurette-divider">{% elsif site.duoshuo.config %}<hr class="featurette-divider">{% endif %}
+  {% if site.jiathis.config %}<div class="col-md-12 jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="view_window"></a><a class="jiathis_counter_style"></a></div>{% endif %}
+  {% if site.duoshuo.config %}<div class="col-md-12 ds-thread"></div>{% endif %}
 </div>
 <div class="col-md-2 col-md-push-1 visible-md-block visible-lg-block">
-  <div class="panel panel-primary">
-    <img class="img-thumbnail" src="/images/QR.png" />
-  </div>
+  <div class="panel panel-primary"><img class="img-thumbnail" src="/images/QR.png" /></div>
 </div>
 </div>
-<script src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992"></script>
-<script>var duoshuoQuery={short_name:"liuxy"};(function(){var ds=document.createElement('script');ds.type='text/javascript';ds.async=true;ds.src='http://static.duoshuo.com/embed.js';ds.charset='UTF-8';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ds)})();</script>
+{% if site.jiathis.config %}<script src="http://v3.jiathis.com/code/jia.js?uid=1375229595704992"></script>{% endif %}
+{% if site.duoshuo.config %}<script>var duoshuoQuery={short_name:"{{ site.duoshuo.id }}"};(function(){var ds=document.createElement('script');ds.type='text/javascript';ds.async=true;ds.src='http://static.duoshuo.com/embed.js';ds.charset='UTF-8';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ds)})();</script>{% endif %}

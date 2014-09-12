@@ -6,7 +6,6 @@ paginate_path: "/page:num"
 
 safe: false
 
-#Site config
 title: Liu's Blog
 keywords: ["Liu's Blog", "computer", "life"]
 description: Liu's Blog：http://blog.chit-chatting.tk/
@@ -14,7 +13,6 @@ url: http://blog.chit-chatting.tk/
 feed: /atom.xml
 favicon: /images/icon.ico
 
-#Nav config
 nav:
   - text: <i class="fa fa-home fa-fw"></i>首页
     url: /index.html
@@ -31,12 +29,10 @@ nav:
   - text: <i class="fa fa-rss fa-fw"></i>RSS
     url: /atom.xml
 
-#Author config
 author:
     name: Liu
     email: liuxy6@gmail.com
 
-#Follow me
 follow:
   - class: fa fa-rss fa-lg
     url: /atom.xml
@@ -52,3 +48,12 @@ follow:
 links:
   - item:
     message: 朋友
+
+googleanalytics:
+  config: true
+  id: UA-44812964-1
+jiathis:
+  config: true
+duoshuo:
+  config: true
+  id: liuxy

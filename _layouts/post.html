@@ -8,16 +8,8 @@ layout: default1
 <hr class="featurette-divider">
 <div>
   <ul class="pager">
-    {% if page.previous %}
-    <li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a></li>
-    {% else %}
-    <li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i>&nbsp;没有上一篇了</a></li>
-    {% endif %}
-    {% if page.next %}
-    <li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
-    {% else %}
-    <li class="next disabled"><a>没有下一篇了&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>
-    {% endif %}
+    {% if page.previous %}<li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ page.previous.title | truncatewords:5 }}</a></li>{% else %}<li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i>&nbsp;没有上一篇了</a></li>{% endif %}
+    {% if page.next %}<li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }}&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>{% else %}<li class="next disabled"><a>没有下一篇了&nbsp;<i class="fa fa-arrow-circle-right"></i></a></li>{% endif %}
   </ul>
-  <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i>返回主页</button></a></div>
+  <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i> 返回主页</button></a></div>
 </div>
