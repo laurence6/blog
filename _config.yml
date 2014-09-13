@@ -8,8 +8,8 @@ safe: false
 
 title: Liu's Blog
 keywords: ["Liu's Blog", "computer", "life"]
-description: Liu's Blog：http://blog.chit-chatting.tk/
-url: http://blog.chit-chatting.tk/
+description: Liu's Blog：http://blog.laurence.tk/
+url: http://blog.laurence.tk/
 feed: /atom.xml
 favicon: /images/icon.ico
 
@@ -56,4 +56,4 @@ jiathis:
   config: true
 duoshuo:
   config: true
-  id: liuxy
+  id: laurence
