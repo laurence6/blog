@@ -50,10 +50,10 @@ links:
     message: 朋友
 
 googleanalytics:
-  config: true
-  id: UA-44812964-1
+    config: no
+    id: UA-44812964-1
 jiathis:
-  config: true
+    config: true
 duoshuo:
-  config: true
-  id: laurence
+    config: true
+    id: laurence
