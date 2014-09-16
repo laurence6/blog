@@ -15,7 +15,7 @@ title: 分类
     <h2><i class="fa fa-folder-open"></i> {{ category[0] | join: "/" }}</h2>
     <ul style="list-style: none">
       {% for node in category[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
-      <li class="row"><span class="col-md-4 col-sm-5 col-xs-12 lead" style="font-family: monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="col-md-8 col-sm-7 col-xs-12 lead"><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
+      <li class="row"><span class="col-md-4 col-sm-5 col-xs-12 lead text-nowrap" style="font-family: monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="col-md-8 col-sm-7 col-xs-12 lead"><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
       {% endif %}{% endif %}{% endfor %}
     </ul>
   </div>
