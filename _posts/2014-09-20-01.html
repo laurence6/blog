@@ -1,0 +1,30 @@
+---
+layout: post
+title: 为 ssh 添加双重认证
+category: "计算机"
+tags: ["ssh", "linux", "软件"]
+image:
+---
+<p>作为一个系统管理员并不能总是呆在机器旁边，所以常常需要远程登录到机器上，通常的做法就是使用比较安全的 ssh 进行远程连接，但是经常有 ssh 的密码泄露，所以出现了新的认证方式，双因子认证。用户需要通过两种不同的认证程序: 提供他们知道的信息 (用户名/密码)，再借助其他工具提供用户所不知道的信息 (用手机生成的一次性验证码)。这样只有知道了用户名和密码，还要拿到你的手机获取一次性验证码之后才能完成认证。</p>
+<p>Google 发布了 Google Authenticator，一款开源的，可基于开放规则 (HMAP/基于时间) 生成一次性密码的软件。这是一款跨平台软件，可运行在 Linux、Android、iOS 上。Google Authenticator 同时也支持 PAM，使其能和其他也适用 PAM 进行验证的工具 (如OpenSSH) 协同工作。</p>
+<p>下面是具体的设置过程:</p>
+<h3>1. 在服务器上安装 Google Authenticator</h3>
+<p>Debian/Ubuntu:</p>
+<pre># apt-get install libpam-google-authenticator</pre>
+<p>Centos/Fefora:</p>
+<pre># yum install google-authenticator</pre>
+<p>或者使用源码包编译: <a href="https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2" target="view-window">点这里下载</a></p>
+<h3>2. 生成秘钥</h3>
+<pre>$ google-authenticator</pre>
+<p>跟着提示一步一步走就可以了。</p>
+<h3>3. 绑定手机</h3>
+<p>在上一步最后应该看到一个二维码，在手机上安装身份验证器 app 然后扫描二维码就能绑定手机了。</p>
+<h3>4. 修改 ssh 配置</h3>
+<p>修改 /etc/pam.d/sshd:</p>
+<pre># vim /etc/pam.d/sshd</pre>
+<p>增加一行:</p>
+<pre>auth required pam_google_authenticator.so</pre>
+<p>修改 /etc/ssh/sshd_config:</p>
+<pre># vim /etc/ssh/sshd_config</pre>
+<p>修改 <code>ChallengeResponseAuthentication no</code> 为 <code>ChallengeResponseAuthentication yes</code></p>
+<h3>5. 重启 ssh 服务</h3>
