@@ -2,15 +2,12 @@
 layout: default
 ---
 <div class="row">
-<div class="col-md-9 col-sm-10 col-sm-push-1 col-xs-12">
+<div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1">
   <h1 class="text-center featurette-heading page-header">{{ page.title }}</h1>
   {{ content }}
   {% if site.jiathis.config %}<hr class="featurette-divider">{% elsif site.duoshuo.config %}<hr class="featurette-divider">{% endif %}
   {% if site.jiathis.config %}<div class="col-md-12 jiathis_style_24x24"><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_weixin"></a><a class="jiathis_button_renren"></a><a class="jiathis_button_fb"></a><a class="jiathis_button_email"></a><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="view_window"></a><a class="jiathis_counter_style"></a></div>{% endif %}
   {% if site.duoshuo.config %}<div class="col-md-12 ds-thread" data-thread-key="{{ page.url | remove_first:'/' }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url | remove_first:'/' }}"></div>{% endif %}
-</div>
-<div class="col-md-2 col-md-push-1 visible-md-block visible-lg-block">
-  <div class="panel panel-primary"><img class="img-thumbnail" src="/images/QR.png" /></div>
 </div>
 </div>
 {% if site.jiathis.config %}<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js"></script>{% endif %}
