@@ -55,7 +55,7 @@ p {
 
 .returnTop {
   position: fixed;
-  right: 19%;
+  right: 10%;
   bottom: 3%;
   display: none;
   z-index: 1000;
