@@ -26,8 +26,6 @@ nav:
     url: /aboutme.html
   - text: <i class="fa fa-link fa-fw"></i>友情链接
     url: /links.html
-  - text: <i class="fa fa-rss fa-fw"></i>RSS
-    url: /atom.xml
 
 author:
     name: Liu
