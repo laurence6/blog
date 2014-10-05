@@ -87,11 +87,11 @@ p {
   background: rgba(0,0,0,1);
 }
 
-.affix-top {
+#QR.affix-top {
   top: 200px;
   position: absolute;
 }
-.affix {
+#QR.affix {
   top: 80px;
 }
 
