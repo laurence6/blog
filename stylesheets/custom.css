@@ -48,6 +48,11 @@ body {
   border-radius: 10px;
 }
 
+.main-content > h1, h2, h3, h4, h5, h6 {
+  color: #0033CC;
+  font-weight: 600;
+}
+
 p {
   text-indent: 32px;
   font-size: 18px;

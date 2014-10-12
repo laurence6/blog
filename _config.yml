@@ -6,9 +6,9 @@ paginate_path: "/page:num"
 
 safe: false
 
-title: Liu's Blog
-keywords: ["Liu's Blog", "computer", "life"]
-description: Liu's Blog：http://blog.laurence.tk/
+title: GoLaurence
+keywords: ["GoLaurence", "computer", "life"]
+description: GoLaurence：http://blog.laurence.tk/
 url: http://blog.laurence.tk/
 feed: /atom.xml
 favicon: /images/icon.ico
