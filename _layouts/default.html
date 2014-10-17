@@ -55,7 +55,7 @@
       </div>
     </div>
     {% if page.boxlst %}{% assign main-content-translucent = nil %}{% else %}{% assign main-content-translucent = 'translucent' %}{% endif %}
-    <div class="container col-md-2 visible-md-block visible-lg-block affix" id="QR" data-spy="affix" data-offset-top="140"><img class="img-thumbnail" src="/images/QR.png" /><div class="text-center">{% for link in site.follow %}<span class="fa-stack"><a href="{{ link.url }}" target="view_window"><i class="fa fa-square fa-stack-2x"></i><i class="{{ link.class }} fa-stack-1x fa-inverse"></i></a></span>{% endfor %}</div></div>
+    <div class="container col-md-2 visible-md-block visible-lg-block affix" id="QR" data-spy="affix" data-offset-top="100"><img class="img-thumbnail" src="/images/QR.png" /><div class="text-center">{% for link in site.follow %}<span class="fa-stack"><a href="{{ link.url }}" target="view_window"><i class="fa fa-square fa-stack-2x"></i><i class="{{ link.class }} fa-stack-1x fa-inverse"></i></a></span>{% endfor %}</div></div>
     <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 main-content {{ main-content-translucent }}">
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
