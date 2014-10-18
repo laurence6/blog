@@ -3,21 +3,19 @@ layout: default
 boxlst: true
 title: 标签
 ---
-<div>
-  <div class="col-md-12 row translucent-box">
-    <div class="page-header"><h1 class="text-center">{{ page.title }}</h1></div>
-    {% for tag in site.tags %}
-    <h4 class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><i class="fa fa-tag" style="display: inline"></i> <a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
-    {% endfor %}
-  </div>
+<div class="col-md-12 row translucent-box">
+  <div class="page-header"><h1 class="text-center">{{ page.title }}</h1></div>
   {% for tag in site.tags %}
-  <div class="col-md-12 row translucent-box" style="padding-top: 6%" id="{{ tag[0] }}-ref">
-    <h2><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h2>
-    <ul style="list-style: none">
-      {% for node in tag[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
-      <li class="row"><span class="col-xs-12 col-sm-5 col-md-4 lead" style="font-family: monospace">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="col-xs-12 col-sm-7 col-md-8 lead"><a href="{{ BASE_PATH }}{{ node.url }}">{{ node.title }}</a></span></li>
-      {% endif %}{% endif %}{% endfor %}
-    </ul>
-  </div>
+  <h4 class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><i class="fa fa-tag"></i> <a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
   {% endfor %}
 </div>
+{% for tag in site.tags %}
+<div class="col-md-12 row translucent-box" id="{{ tag[0] }}-ref">
+  <h2><i class="fa fa-tag h2"></i> {{ tag[0] | join: "/" }}</h2>
+  <ul class="list-unstyled">
+    {% for node in tag[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
+    <li><samp class="col-xs-12 col-sm-5 col-md-4 lead text-nowrap">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</samp><span class="col-xs-12 col-sm-7 col-md-8 lead"><a href="{{ node.url }}">{{ node.title }}</a></span></li>
+    {% endif %}{% endif %}{% endfor %}
+  </ul>
+</div>
+{% endfor %}

@@ -59,7 +59,7 @@
     <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 main-content {{ main-content-translucent }}">
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
-      <hr class="featurette-divider">
+      {% if page.boxlst %}{% else %}<hr class="featurette-divider">{% endif %}
       <footer>
         <div class="text-center">
             {% for link in site.follow %}
