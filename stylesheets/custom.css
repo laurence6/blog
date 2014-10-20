@@ -38,7 +38,7 @@ body {
 
 .site-title {
   font-weight: 700;
-  font-size: 60px;
+  font-size: 48px;
 }
 
 .main-content {
@@ -101,7 +101,7 @@ p {
 }
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 80px 0;
 }
 
 .featurette-heading {
@@ -115,7 +115,7 @@ p {
     font-size: 50px;
   }
   .site-title {
-    font-size: 100px;
+    font-size: 80px;
   }
 }
 
@@ -124,6 +124,6 @@ p {
     margin-top: 120px;
   }
   .site-title {
-    font-size: 120px;
+    font-size: 100px;
   }
 }
