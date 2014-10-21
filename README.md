@@ -1,10 +1,10 @@
 # blog.laurence.tk
 
-这是 [我](http://laurence6.github.io/aboutme.html) 在 GitHub 上搭建的博客的源代码。   
+这是 <a href="http://laurence6.github.io/aboutme.html">我</a> 在 GitHub 上搭建的博客的源代码。   
 
-博客地址: [http://blog.laurence.tk/](http://blog.laurence.tk/)   
+博客地址: <a href="http://blog.laurence.tk/">http://blog.laurence.tk/</a>   
 
-这个博客使用了以 [jQuery](http://jquery.com/) 为基础的 [Bootstrap](http://getbootstrap.com/) 框架，以及 [FontAwesome](http://fortawesome.github.io/Font-Awesome/) 的图标，还有 [JiaThis](http://www.jiathis.com/) 的分享功能和 [多说](http://duoshuo.com/) 的评论功能。   
+这个博客使用了以 <a href="http://jquery.com/">jQuery</a> 为基础的 <a href="http://getbootstrap.com/">Bootstrap</a> 框架，以及 <a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> 的图标，还有 <a href="http://www.jiathis.com/">JiaThis</a> 的分享功能和 <a href="http://duoshuo.com/">多说</a> 的评论功能。   
 
 ##联系我
 电子邮件: liuxy6@gmail.com   
