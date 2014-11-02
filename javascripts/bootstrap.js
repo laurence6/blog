@@ -1,17 +1,25 @@
 /*!
- * Bootstrap v3.2.0 (http://getbootstrap.com)
+ * Bootstrap v3.3.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=1f0164485552b37a32d5)
- * Config saved to config.json and https://gist.github.com/1f0164485552b37a32d5
+ * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=4059402f301da9d1cd7b)
+ * Config saved to config.json and https://gist.github.com/4059402f301da9d1cd7b
  */
-if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript requires jQuery") }
+if (typeof jQuery === 'undefined') {
+  throw new Error('Bootstrap\'s JavaScript requires jQuery')
+}
++function ($) {
+  var version = $.fn.jquery.split(' ')[0].split('.')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
+  }
+}(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.2.0
+ * Bootstrap: button.js v3.3.0
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
@@ -31,7 +39,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.2.0'
+  Button.VERSION  = '3.3.0'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -47,10 +55,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 
     if (data.resetText == null) $el.data('resetText', $el[val]())
 
-    $el[val](data[state] == null ? this.options[state] : data[state])
-
     // push to event loop to allow forms to submit
     setTimeout($.proxy(function () {
+      $el[val](data[state] == null ? this.options[state] : data[state])
+
       if (state == 'loadingText') {
         this.isLoading = true
         $el.addClass(d).attr(d, d)
@@ -72,6 +80,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
         else $parent.find('.active').removeClass('active')
       }
       if (changed) $input.prop('checked', !this.$element.hasClass('active')).trigger('change')
+    } else {
+      this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
     }
 
     if (changed) this.$element.toggleClass('active')
@@ -126,7 +136,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.2.0
+ * Bootstrap: dropdown.js v3.3.0
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
@@ -146,7 +156,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.2.0'
+  Dropdown.VERSION = '3.3.0'
 
   Dropdown.prototype.toggle = function (e) {
     var $this = $(this)
@@ -182,7 +192,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
   }
 
   Dropdown.prototype.keydown = function (e) {
-    if (!/(38|40|27)/.test(e.keyCode)) return
+    if (!/(38|40|27|32)/.test(e.which)) return
 
     var $this = $(this)
 
@@ -194,7 +204,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
 
-    if (!isActive || (isActive && e.keyCode == 27)) {
+    if ((!isActive && e.which != 27) || (isActive && e.which == 27)) {
       if (e.which == 27) $parent.find(toggle).trigger('focus')
       return $this.trigger('click')
     }
@@ -204,10 +214,10 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 
     if (!$items.length) return
 
-    var index = $items.index($items.filter(':focus'))
+    var index = $items.index(e.target)
 
-    if (e.keyCode == 38 && index > 0)                 index--                        // up
-    if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
+    if (e.which == 38 && index > 0)                 index--                        // up
+    if (e.which == 40 && index < $items.length - 1) index++                        // down
     if (!~index)                                      index = 0
 
     $items.eq(index).trigger('focus')
@@ -281,12 +291,14 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     .on('click.bs.dropdown.data-api', clearMenus)
     .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
-    .on('keydown.bs.dropdown.data-api', toggle + ', [role="menu"], [role="listbox"]', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
 
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.2.0
+ * Bootstrap: affix.js v3.3.0
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
@@ -315,7 +327,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.2.0'
+  Affix.VERSION  = '3.3.0'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -439,8 +451,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 
       data.offset = data.offset || {}
 
-      if (data.offsetBottom) data.offset.bottom = data.offsetBottom
-      if (data.offsetTop)    data.offset.top    = data.offsetTop
+      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
+      if (data.offsetTop    != null) data.offset.top    = data.offsetTop
 
       Plugin.call($spy, data)
     })
@@ -449,7 +461,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.2.0
+ * Bootstrap: collapse.js v3.3.0
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
@@ -466,18 +478,25 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
   var Collapse = function (element, options) {
     this.$element      = $(element)
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $(this.options.trigger).filter('[href="#' + element.id + '"], [data-target="#' + element.id + '"]')
     this.transitioning = null
 
-    if (this.options.parent) this.$parent = $(this.options.parent)
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.2.0'
+  Collapse.VERSION  = '3.3.0'
 
   Collapse.TRANSITION_DURATION = 350
 
   Collapse.DEFAULTS = {
-    toggle: true
+    toggle: true,
+    trigger: '[data-toggle="collapse"]'
   }
 
   Collapse.prototype.dimension = function () {
@@ -488,17 +507,21 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
   Collapse.prototype.show = function () {
     if (this.transitioning || this.$element.hasClass('in')) return
 
+    var activesData
+    var actives = this.$parent && this.$parent.find('> .panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
     var startEvent = $.Event('show.bs.collapse')
     this.$element.trigger(startEvent)
     if (startEvent.isDefaultPrevented()) return
 
-    var actives = this.$parent && this.$parent.find('> .panel > .in')
-
     if (actives && actives.length) {
-      var hasData = actives.data('bs.collapse')
-      if (hasData && hasData.transitioning) return
       Plugin.call(actives, 'hide')
-      hasData || actives.data('bs.collapse', null)
+      activesData || actives.data('bs.collapse', null)
     }
 
     var dimension = this.dimension()
@@ -506,6 +529,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     this.$element
       .removeClass('collapse')
       .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
 
     this.transitioning = 1
 
@@ -541,6 +569,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
     this.$element
       .addClass('collapsing')
       .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
 
     this.transitioning = 1
 
@@ -562,6 +595,33 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 
   Collapse.prototype.toggle = function () {
     this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(target)
   }
 
 
@@ -599,21 +659,13 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
   // =================
 
   $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
-    var href
     var $this   = $(this)
-    var target  = $this.attr('data-target')
-        || e.preventDefault()
-        || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
-    var $target = $(target)
-    var data    = $target.data('bs.collapse')
-    var option  = data ? 'toggle' : $this.data()
-    var parent  = $this.attr('data-parent')
-    var $parent = parent && $(parent)
 
-    if (!data || !data.transitioning) {
-      if ($parent) $parent.find('[data-toggle="collapse"][data-parent="' + parent + '"]').not($this).addClass('collapsed')
-      $this.toggleClass('collapsed', $target.hasClass('in'))
-    }
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $.extend({}, $this.data(), { trigger: this })
 
     Plugin.call($target, option)
   })
@@ -621,7 +673,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap's JavaScript req
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.2.0
+ * Bootstrap: transition.js v3.3.0
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
