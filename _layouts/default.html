@@ -57,6 +57,7 @@
     {% if page.boxlst %}{% assign main-content-translucent = nil %}{% else %}{% assign main-content-translucent = 'translucent' %}{% endif %}
     <div class="container col-md-2 visible-md-block visible-lg-block affix" id="QR" data-spy="affix" data-offset-top="100"><div class="text-center"><img class="img-thumbnail" src="/images/QR.png" /></div><div class="text-center">{% for link in site.follow %}<span class="fa-stack"><a href="{{ link.url }}" target="_blank"><i class="fa fa-square fa-stack-2x"></i><i class="{{ link.class }} fa-stack-1x fa-inverse"></i></a></span>{% endfor %}</div></div>
     <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-push-1 col-md-push-2 main-content {{ main-content-translucent }}">
+    <div class="container col-md-2 col-md-push-10 visible-md-block visible-lg-block affix" id="weibo" data-spy="affix"><iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=3207393433&verifier=c0fdfe08&dpc=1"></iframe></div>
       <div class="returnTop"><span class="a"></span><span class="b"></span></div>
       {{ content }}
       {% if page.boxlst %}{% else %}<hr class="featurette-divider">{% endif %}

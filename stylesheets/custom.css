@@ -99,6 +99,9 @@ p {
 #QR.affix {
   top: 80px;
 }
+#weibo.affix {
+  top: 80px;
+}
 
 .featurette-divider {
   margin: 80px 0;
