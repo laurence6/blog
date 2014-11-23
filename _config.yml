@@ -45,6 +45,8 @@ follow:
 
 links:
   - item:
+    - text: Broncotc
+      url: http://blog.broncotc.com/
     message: 朋友
 
 googleanalytics:
