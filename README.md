@@ -4,7 +4,7 @@
 
 博客地址: <a href="http://blog.laurence.tk/">http://blog.laurence.tk/</a>   
 
-这个博客使用了以 <a href="http://jquery.com/">jQuery</a> 为基础的 <a href="http://getbootstrap.com/">Bootstrap</a> 框架，以及 <a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> 的图标，还有 <a href="http://www.jiathis.com/">JiaThis</a> 的分享功能和 <a href="http://duoshuo.com/">多说</a> 的评论功能。   
+这个博客使用了以 <a href="http://jquery.com/">jQuery</a> 为基础的 <a href="http://getbootstrap.com/">Bootstrap</a> 框架，以及 <a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a> 的图标，还有 <a href="http://share.baidu.com/">百度</a> 的分享功能和 <a href="http://duoshuo.com/">多说</a> 的评论功能。   
 
 ##联系我
 电子邮件: liuxy6@gmail.com   

@@ -52,7 +52,7 @@ links:
 googleanalytics:
     config: no
     id: UA-44812964-1
-jiathis:
+share:
     config: true
 duoshuo:
     config: true
