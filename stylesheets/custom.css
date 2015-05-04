@@ -29,15 +29,7 @@ body {
 
 .translucent {
   background: rgba(238,238,238,0.85);
-  padding-top: 10%;
-  padding-bottom: 5%;
   margin-top: 5%;
-  margin-bottom: 5%;
-}
-.translucent-box {
-  background: rgba(255,255,255,0.65);
-  border-radius: 6px;
-  padding-bottom: 5%;
   margin-bottom: 5%;
 }
 
@@ -65,6 +57,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #000;
   font-weight: 600;
+}
+
+.article {
+  padding-top: 10%;
+  padding-bottom: 5%;
 }
 
 .article > h1:before,
@@ -128,14 +125,13 @@ p {
 }
 
 .index-box-heading {
-  font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
 }
 
 @media (min-width: 768px) {
   .index-box-heading {
-    font-size: 50px;
+    margin-top: 50px;
   }
   .site-title {
     font-size: 72px;
@@ -144,7 +140,7 @@ p {
 
 @media (min-width: 992px) {
   .index-box-heading {
-    margin-top: 120px;
+    margin-top: 100px;
   }
   .site-title {
     font-size: 96px;

@@ -2,14 +2,14 @@
 layout: default
 title: 分类
 ---
-<div class="col-md-12 row translucent-box">
+<div class="col-md-12 row translucent jumbotron">
   <h2 class="text-center">全部分类</h2>
   {% for category in site.categories %}
   <h4 class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><i class="fa fa-folder-open"></i> <a href="#{{ category[0] }}-ref">{{ category[0] | join: "/" }}</span></a> <span class="badge">{{ category | last | size }}</span></h4>
   {% endfor %}
 </div>
 {% for category in site.categories %}
-<div class="col-md-12 row translucent-box" id="{{ category[0] }}-ref">
+<div class="col-md-12 row translucent jumbotron" id="{{ category[0] }}-ref">
   <h2><i class="fa fa-folder-open"></i> {{ category[0] | join: "/" }}</h2>
   <ul class="list-unstyled">
     {% for node in category[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
