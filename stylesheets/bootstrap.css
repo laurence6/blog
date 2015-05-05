@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=f7f6c01146ad130ee808)
- * Config saved to config.json and https://gist.github.com/f7f6c01146ad130ee808
+ * Generated using the Bootstrap Customizer (http://v3.bootcss.com/customize/?id=5e62aeab3913ef83a1b3)
+ * Config saved to config.json and https://gist.github.com/5e62aeab3913ef83a1b3
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -287,7 +287,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   color: #333333;
-  background-color: #f2f2f2;
+  background-color: #dddddd;
 }
 input,
 button,
@@ -330,7 +330,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.8;
-  background-color: #f2f2f2;
+  background-color: #dddddd;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1482,7 +1482,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #f2f2f2;
+  background-color: #dddddd;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3133,7 +3133,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #f2f2f2;
+  background-color: #dddddd;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3179,7 +3179,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f2f2f2;
+    border-bottom-color: #dddddd;
   }
 }
 .nav-pills > li {
@@ -3247,7 +3247,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #f2f2f2;
+    border-bottom-color: #dddddd;
   }
 }
 .tab-content > .tab-pane {
@@ -4053,12 +4053,12 @@ a.badge:focus {
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;
-  color: inherit;
+  color: ;
   background-color: #eeeeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+  color: ;
 }
 .jumbotron p {
   margin-bottom: 15px;
@@ -4094,7 +4094,7 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 28px;
   line-height: 1.8;
-  background-color: #f2f2f2;
+  background-color: #dddddd;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
