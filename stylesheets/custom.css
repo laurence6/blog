@@ -11,10 +11,6 @@
   width: auto;
 }
 
-.navbar {
-  background: rgba(0,0,0,0.6);
-}
-
 .navbar-nav {
   margin: 0 auto;
   display: table;
@@ -107,6 +103,14 @@ p {
   background: #000;
 }
 
+#navbar.affix-top {
+  background: rgba(0,0,0,0);
+  transition: background 1s;
+}
+#navbar.affix {
+  background: rgba(0,0,0,0.6);
+  transition: background 1s;
+}
 #QR.affix-top {
   top: 400px;
   position: absolute;
