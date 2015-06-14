@@ -54,6 +54,6 @@ googleanalytics:
     id: UA-44812964-1
 share:
     config: true
-duoshuo:
+comment:
     config: true
     id: laurence
