@@ -1,21 +1,10 @@
-#loading {
-    display:    block;
-    position:   fixed;
-    z-index:    2000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba(255, 255, 255, .75) url(/images/loading.gif) 50% 50% no-repeat;
-}
-
 .navbar-header {
   position: absolute;
 }
 
 .navbar {
-  border-width: 0;
   border-color: transparent;
+  border-width: 0;
 }
 
 .navbar-wrapper .navbar .container {
@@ -23,26 +12,26 @@
 }
 
 .navbar-nav {
-  margin: 0 auto;
-  display: table;
-  table-layout: fixed;
   float: none;
+  display: table;
+  margin: 0 auto;
+  table-layout: fixed;
 }
 
 .translucent {
-  background: #fff;
-  box-shadow: 0 0 0 0,0 6px 12px rgba(0,0,0,0.1);
   margin-top: 5%;
   margin-bottom: 10%;
+  background: #fff;
+  box-shadow: 0 0 0 0,0 6px 12px rgba(0,0,0,0.1);
 }
 
 .site-title {
   padding-top: 100px;
   padding-bottom: 60px;
   color: #fff;
+  text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
   font-weight: 700;
   font-size: 64px;
-  text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
 }
 
 #title {
@@ -51,8 +40,8 @@
 }
 
 .main-content {
-  padding-bottom: 60px;
   margin-bottom: 6%;
+  padding-bottom: 60px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -71,21 +60,21 @@ h1, h2, h3, h4, h5, h6 {
 .article > h4:before,
 .article > h5:before,
 .article > h6:before {
-  content:"● "
+  content:"● ";
 }
 
 p {
+  color: rgba(34,34,34,0.8);
   text-indent: 32px;
   font-size: 18px;
-  color: rgba(34,34,34,0.8);
 }
 
 .returnTop {
   position: fixed;
   right: 10%;
   bottom: 3%;
-  display: none;
   z-index: 1000;
+  display: none;
   width: 50px;
   height: 50px;
   border-radius:5px;
@@ -98,16 +87,16 @@ p {
   left: 13px;
   width: 0;
   height: 0;
-  border-width: 12.5px;
   border-color: transparent transparent rgba(255,255,255,0.75);
   border-style: dashed dashed solid;
+  border-width: 12.5px;
 }
 .returnTop .b {
   position: absolute;
   top: 22px;
   left: 21px;
-  height: 15px;
   width: 8px;
+  height: 15px;
   background: rgba(255,255,255,0.75);
 }
 .returnTop:hover {
@@ -123,23 +112,23 @@ p {
   transition: background 1s;
 }
 #QR.affix-top {
-  top: 400px;
   position: absolute;
+  top: 400px;
 }
 #QR.affix {
   top: 80px;
 }
 #weibo.affix-top {
-  top: 400px;
   position: absolute;
+  top: 400px;
 }
 #weibo.affix {
   top: 80px;
 }
 
 .heading {
-  line-height: 1;
   letter-spacing: -1px;
+  line-height: 1;
 }
 
 @media (min-width: 768px) {
@@ -156,6 +145,6 @@ p {
 
 ::selection {
   background-color: rgba(170,170,170,0.8);
-  text-shadow: none;
   color: #000;
+  text-shadow: none;
 }
