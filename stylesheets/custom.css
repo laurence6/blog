@@ -118,13 +118,6 @@ p {
 #QR.affix {
   top: 80px;
 }
-#weibo.affix-top {
-  position: absolute;
-  top: 400px;
-}
-#weibo.affix {
-  top: 80px;
-}
 
 .heading {
   letter-spacing: -1px;
