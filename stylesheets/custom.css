@@ -124,6 +124,10 @@ p {
   .index-box-heading {
     margin-top: 50px;
   }
+  #title {
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
   .navbar-header {
     position: absolute;
   }
