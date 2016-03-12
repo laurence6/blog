@@ -10,21 +10,33 @@ image:
 <p>下面是具体的设置过程:</p>
 <h3>1. 在服务器上安装 Google Authenticator</h3>
 <p>Debian/Ubuntu:</p>
-<pre># apt-get install libpam-google-authenticator</pre>
+<pre>
+# apt-get install libpam-google-authenticator
+</pre>
 <p>Centos/Fefora:</p>
-<pre># yum install google-authenticator</pre>
+<pre>
+# yum install google-authenticator
+</pre>
 <p>或者使用源码包编译: <a href="https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2" target="view-window">点这里下载</a></p>
 <h3>2. 生成秘钥</h3>
-<pre>$ google-authenticator</pre>
+<pre>
+$ google-authenticator
+</pre>
 <p>跟着提示一步一步走就可以了。</p>
 <h3>3. 绑定手机</h3>
 <p>在上一步最后应该看到一个二维码，在手机上安装身份验证器 app 然后扫描二维码就能绑定手机了。</p>
 <h3>4. 修改 ssh 配置</h3>
 <p>修改 /etc/pam.d/sshd:</p>
-<pre># vim /etc/pam.d/sshd</pre>
+<pre>
+# vim /etc/pam.d/sshd
+</pre>
 <p>增加一行:</p>
-<pre>auth required pam_google_authenticator.so</pre>
+<pre>
+auth required pam_google_authenticator.so
+</pre>
 <p>修改 /etc/ssh/sshd_config:</p>
-<pre># vim /etc/ssh/sshd_config</pre>
+<pre>
+# vim /etc/ssh/sshd_config
+</pre>
 <p>修改 <code>ChallengeResponseAuthentication no</code> 为 <code>ChallengeResponseAuthentication yes</code></p>
 <h3>5. 重启 ssh 服务</h3>

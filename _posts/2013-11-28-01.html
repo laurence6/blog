@@ -9,8 +9,14 @@ image: http://ww2.sinaimg.cn/mw690/bf2cf099gw1eba06vsbh6j20uk0jujue.jpg
 <p>下面是我换的主题的效果图:</p>
 <a class="thumbnail"><img src="http://ww2.sinaimg.cn/mw690/bf2cf099gw1eba06vsbh6j20uk0jujue.jpg" /></a>
 <p>首先从网上找到合适的 grub 主题。然后编辑 /etc/default/grub 里:</p>
-<pre>GRUB_THEME="/path/to/theme/theme.txt"</pre>
+<pre>
+GRUB_THEME="/path/to/theme/theme.txt"
+</pre>
 <p>最后重新生成一下 grub 的配置:</p>
-<pre># grub-mkconfig -o /boot/grub/grub.cfg</pre>
+<pre>
+# grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
 <p>配置成功的话,在重新生成配置过程中,会出现:</p>
-<pre>Found theme: /path/to/theme/theme.txt</pre>
+<pre>
+Found theme: /path/to/theme/theme.txt
+</pre>
