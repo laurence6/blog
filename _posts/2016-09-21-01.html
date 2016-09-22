@@ -1,0 +1,67 @@
+---
+layout: post
+title: PEG.go
+category: "计算机"
+tags: ["compiler","go"]
+image:
+---
+<p>开了个新坑。正在写一个使用 PEG (Parsing Expression Grammar (<a href="https://en.wikipedia.org/wiki/Parsing_expression_grammar" target="_blank">Wikipedia</a>)) 的 parser generator，类似于 <a href="http://pegjs.org/" target="_blank">PEG.js</a>。</p>
+<p>PEG 在 2004 年由 Bryan Ford 提出，不同于传统的 CFG，类似于以前的自顶向下解析。主要不同在于选择运算符，PEG 中，如果第一个选项成功匹配了，之后的都将被忽略。</p>
+<p>项目已经开源在 github: <a href="https://github.com/laurence6/peg.go" target="_blank">PEG.go</a>。</p>
+
+<h3>进展</h3>
+<ul>
+	<li><b>Scanner: 完成。</b>
+		<ul>
+			<li>要支持 escaped character: <code>"\t\n"</code>，字符串里问题不大，看一下前一个字符就行了。</li>
+			<li>
+				<del>有一个比较纠结的地方是我希望能支持 utf-8，但是 utf-8 是可变长的，一个字符可能在多个 byte 里。现在的方案是在一开始把整个文件读到一个字节数组，然后转换成字符数组。</del>
+				<br />
+				Scanner 接受一个 reader 并维护了一个 buffer (一个字节数组)。每次需要下一个字符的时候，先从 buffer 里取，当 buffer 里内容太少的时候重新填满 buffer。
+			</li>
+			<li>还有一个没解决的问题就是，peg 文件里有可能出现一段用户写的，用花括号围起来的代码。但是这段代码里可能出现花括号。如果是一对花括号是没有问题的。但是有不匹配的单个左/右花括号的时候，就不能正确处理了。</li>
+		</ul>
+	</li>
+	<li><b>Parser: 完成。</b>
+		<ul>
+			<li>手写了一个递归下降的 Parser。</li>
+		</ul>
+	</li>
+	<li><b>Code generation: 基本完成，仍需改进。</b>
+		<ul>
+			<li>函数返回的都是 <code>interface{}</code>，之后用起来很麻烦。</li>
+			<li>
+				<del>当函数返回 <code>nil</code> 的时候，认为解析失败。但是真正的情况中有可能不需要返回。</del>
+				<br />
+				现在函数有两个返回值，第一个是实际返回的内容，第二个是 error 类型。<del>有个小问题就是用户写的代码中 return 时需要返回两个值，似乎有点麻烦(?)。以后可以把返回的变量名指定，这样返回的时候只需要 return 就行了。</del>
+				<br />
+				提供了返回变量，ret 和 err。只需要赋值就行了，不需要手动写 return。
+			</li>
+			<li>最近看到 parser combinator，似乎有点意思。</li>
+			<li>错误提示和处理还没有。</li>
+		</ul>
+	</li>
+</ul>
+
+<h3>未来</h3>
+<p>这部分是在现在的问题都解决后的一些方向。</p>
+<ul>
+	<li>实现 <a href="http://bford.info/pub/lang/packrat-icfp02/" target="_blank">Packrat parser</a>。它能够保证线性的运行时间，但是会消耗更多的内存。</li>
+	<li>处理左递归。</li>
+</ul>
+
+<h3>参考资料</h3>
+<ul>
+	<li>论文
+		<ul>
+			<li><a href="http://bford.info/pub/lang/peg.pdf" target="_blank">Bryan Ford (2004). Parsing expression grammars: a recognition-based syntactic foundation.</a></li>
+		</ul>
+	</li>
+	<li>书籍
+		<ul>
+			<li>Michael Lee Scott. <i>程序设计语言实践之路 (Programming Language Pragmatics)</i></li>
+			<li>Andrew W Appel. <i>现代编译原理 (Modern Compiler Implementation)</i></li>
+			<li>Dick Grune. <i>Parsing Techniques</i></li>
+		</ul>
+	</li>
+</ul>
