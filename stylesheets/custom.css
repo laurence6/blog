@@ -21,6 +21,10 @@
   box-shadow: 0 0 0 0,0 6px 12px rgba(0,0,0,0.1);
 }
 
+.jumbotron {
+  border-radius: 0 !important;
+}
+
 .site-title {
   padding-top: 100px;
   padding-bottom: 60px;
