@@ -7,8 +7,8 @@ paginate_path: "/page:num"
 safe: false
 
 title: GoLaurence
-keywords: ["GoLaurence", "computer", "life"]
-description: GoLaurence：http://blog.laurence.tk/
+keywords: ["GoLaurence", "computer"]
+description: Blog of Laurence Liu, student of the Ohio State University
 url: http://blog.laurence.tk/
 feed: /atom.xml
 favicon: /images/icon.ico
@@ -16,30 +16,26 @@ favicon: /images/icon.ico
 nav:
   - text: <i class="fa fa-home fa-fw"></i>首页
     url: /index.html
+  - text: <i class="fa fa-user fa-fw"></i>关于我
+    url: /aboutme.html
   - text: <i class="fa fa-folder-open fa-fw"></i>分类
     url: /categories.html
   - text: <i class="fa fa-tags fa-fw"></i>标签
     url: /tags.html
-  - text: <i class="fa fa-user fa-fw"></i>关于我
-    url: /aboutme.html
-  - text: <i class="fa fa-link fa-fw"></i>友情链接
+  - text: <i class="fa fa-link fa-fw"></i>朋友
     url: /links.html
 
 author:
-    name: Liu
+    name: Laurence
     email: liuxy6@gmail.com
 
 follow:
-  - class: fa fa-rss fa-lg
-    url: /atom.xml
-  - class: fa fa-weibo fa-lg
-    url: http://weibo.com/u/3207393433
   - class: fa fa-github fa-lg
     url: https://github.com/laurence6
-  - class: fa fa-facebook fa-lg
-    url: https://www.facebook.com/
-  - class: fa fa-twitter fa-lg
-    url: https://twitter.com/
+  - class: fa fa-telegram fa-lg
+    url: https://telegram.me/laurence6
+  - class: fa fa-rss fa-lg
+    url: /atom.xml
 
 links:
   - item:
