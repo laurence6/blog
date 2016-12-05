@@ -5,7 +5,7 @@ title: 标签
 <div class="col-md-12 row translucent jumbotron">
   <h2 class="text-center">全部标签</h2>
   {% for tag in site.tags %}
-  <h4 class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><i class="fa fa-tag"></i> <a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
+  <h4 class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
   {% endfor %}
 </div>
 {% for tag in site.tags %}
