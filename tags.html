@@ -13,7 +13,7 @@ title: 标签
   <h2><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h2>
   <ul class="list-unstyled">
     {% for node in tag[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
-    <li><samp class="col-xs-12 col-sm-5 col-md-4 lead text-nowrap">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</samp><span class="col-xs-12 col-sm-7 col-md-8 lead"><a href="{{ node.url }}">{{ node.title }}</a></span></li>
+    <li><span class="col-xs-12 col-sm-5 col-md-4 lead text-nowrap">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="col-xs-12 col-sm-7 col-md-8 lead"><a href="{{ node.url }}">{{ node.title }}</a></span></li>
     {% endif %}{% endif %}{% endfor %}
   </ul>
 </div>
