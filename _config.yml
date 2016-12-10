@@ -9,7 +9,7 @@ safe: false
 title: GoLaurence
 keywords: ["GoLaurence", "computer"]
 description: Blog of Laurence Liu, student of the Ohio State University
-url: http://blog.laurence.tk/
+url: http://blog.laurence.tk
 feed: /atom.xml
 favicon: /images/icon.ico
 

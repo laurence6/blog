@@ -8,12 +8,13 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ',' }}{% else %}{{ site.keywords | join: ',' }}{% endif %}">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <link href="{{ site.favicon }}" rel="shortcut icon" type="image/x-icon">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon }}">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="/stylesheets/custom.css" rel="stylesheet">
-    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
-    <link href="/stylesheets/syntax.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/syntax.css">
     <style>#loading{position:fixed;top:0;left:0;z-index:2000;display:block;width:100%;height:100%;background:rgba(255,255,255,.75)}#loading img{position:fixed;top:50%;left:50%}</style>
 </head>
 <body>
