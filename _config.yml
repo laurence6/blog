@@ -18,8 +18,6 @@ nav:
     url: /index.html
   - text: <i class="fa fa-user fa-fw"></i>关于我
     url: /aboutme.html
-  - text: <i class="fa fa-folder-open fa-fw"></i>分类
-    url: /categories.html
   - text: <i class="fa fa-tags fa-fw"></i>标签
     url: /tags.html
   - text: <i class="fa fa-link fa-fw"></i>朋友
