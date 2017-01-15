@@ -1,24 +1,26 @@
 ---
 layout: default
 ---
-{% for post in paginator.posts %}
-<div class="row translucent jumbotron">
-  {% if post.image %}<div class="col-md-7">{% else %}<div class="col-md-12">{% endif %}
-    <h1 class="index-box-heading heading text-center"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-    <h4 class="text-center"><span class="text-muted">{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span></h4>
-    <h4 class="text-center">{% for tag in post.tags %}<span class="label label-info"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</h4>
+<div class="row translucent">
+  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  {% for post in paginator.posts %}
+  <div class="col-xs-12 col-sm-8 col-md-9 tl-title">
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    <span class="hidden-xs">{% for tag in post.tags %}<span class="label label-default"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</span>
   </div>
-  {% if post.image %}
-  <div class="col-md-5"><img class="img-thumbnail" src="{{ post.image }}" /></div>
-  {% endif %}
+  <div class="hidden-xs col-sm-4 col-md-3 tl-title text-right">
+    <span>{{ post.date | date_to_utc | date: "%Y-%m-%d" }}</span>
+  </div>
+  {% endfor %}
+  </div>
 </div>
-{% endfor %}
 
 {% if paginator.total_pages > 1 %}
 <ul class="pagination">
   {% if paginator.previous_page %}
   <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a></li>
   {% endif %}
+
   {% for page in (1..paginator.total_pages) %}
   {% if page == paginator.page %}
   <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
@@ -28,6 +30,7 @@ layout: default
   <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
   {% endif %}
   {% endfor %}
+
   {% if paginator.next_page %}
   <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">下一页 &raquo;</a></li>
   {% endif %}

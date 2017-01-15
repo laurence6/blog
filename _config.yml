@@ -1,7 +1,8 @@
+gems: [jekyll-paginate]
 baseurl:
 permalink: /:year/:month/:day/:title
 highlighter: rouge
-paginate: 5
+paginate: 20
 paginate_path: "/page:num"
 
 safe: false
@@ -42,10 +43,10 @@ links:
     message: 朋友
 
 googleanalytics:
-    config: no
+    enabled: false
     id: UA-44812964-1
 share:
-    config: true
+    enabled: false
 comment:
-    config: true
+    enabled: false
     id: laurence

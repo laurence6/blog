@@ -2,19 +2,30 @@
 layout: default
 title: 标签
 ---
-<div class="col-md-12 row translucent jumbotron">
-  <h2 class="text-center">全部标签</h2>
-  {% for tag in site.tags %}
-  <h4 class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-nowrap"><span class="label label-info"><a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a> <span class="badge">{{ tag | last | size }}</span></h4>
-  {% endfor %}
+<div class="row translucent">
+  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+    {% for tag in site.tags %}
+    <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-nowrap">
+      <span class="label label-default"><a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a>
+    </h4>
+    {% endfor %}
+  </div>
 </div>
 {% for tag in site.tags %}
-<div class="col-md-12 row translucent jumbotron" id="{{ tag[0] }}-ref">
-  <h2><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h2>
-  <ul class="list-unstyled">
-    {% for node in tag[1] %}{% if node.title != null %}{% if group == null or group == node.group %}
-    <li><span class="col-xs-12 col-sm-5 col-md-4 lead text-nowrap">{{ node.date | date_to_utc | date: "%Y-%m-%d" }} &raquo;</span><span class="col-xs-12 col-sm-7 col-md-8 lead"><a href="{{ node.url }}">{{ node.title }}</a></span></li>
-    {% endif %}{% endif %}{% endfor %}
-  </ul>
+<div class="row translucent" id="{{ tag[0] }}-ref">
+  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+    <h3><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h3>
+    {% for node in tag[1] %}
+    {% if node.title != null %}{% if group == null or group == node.group %}
+    <div class="col-xs-12 col-sm-8 col-md-9 tl-title">
+      <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+      <span class="hidden-xs">{% for tag in node.tags %}<span class="label label-default"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</span></a> {% endfor %}</span>
+    </div>
+    <div class="hidden-xs col-sm-4 col-md-3 tl-title text-right">
+      <span>{{ node.date | date_to_utc | date: "%Y-%m-%d" }}</span>
+    </div>
+    {% endif %}{% endif %}
+    {% endfor %}
+  </div>
 </div>
 {% endfor %}

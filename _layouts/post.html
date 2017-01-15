@@ -4,10 +4,10 @@ layout: default
 <div class="row">
   {% if page.noinfo %}
   {% else %}
-  <h4 class="col-md-12 text-center"><span class="label label-info"><i class="fa fa-calendar"></i> 发布: {{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span> <span class="label label-info"><i class="fa fa-folder-open"></i> 分类: <a href="/categories.html#{{ page.category }}-ref">{{ page.category }}</a></span></h4>
-  <h4 class="col-md-12 text-center">{% for tag in page.tags %}<span class="label label-info"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</a></span> {% endfor %}</h4>
+  <span class="col-xs-12 text-center">{{ page.date | date_to_utc | date: "%Y-%m-%d" }}</span>
+  <span class="col-xs-12 text-center">{% for tag in page.tags %}<span class="label label-default"><a href="/tags.html#{{ tag }}-ref">{{ tag | join: "/" }}</a></span> {% endfor %}</span>
   {% endif %}
-  {% if site.comment.config %}<h4 class="col-md-12 text-center"><a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i> 评论&nbsp;&nbsp;</button></a></h4>{% endif %}
+  {% if site.comment.enabled %}<h4 class="col-md-12 text-center"><a href="#ds-thread"><button type="button" class="btn btn-sm btn-default">&nbsp;&nbsp;<i class="fa fa-comments-o"></i> 评论&nbsp;&nbsp;</button></a></h4>{% endif %}
 </div>
 
 <div class="row translucent">
@@ -20,20 +20,22 @@ layout: default
   <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
     {% if page.previous or page.next %}
     <ul class="pager">
-      {% if page.previous %}<li class="previous"><a href="{{ page.previous.url }}" rel="bookmark"><i class="fa fa-arrow-circle-left"></i> {{ page.previous.title | truncatewords:5 }}</a></li>{% else %}<li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i> 没有上一篇了</a></li>{% endif %}
-      {% if page.next %}<li class="next"><a href="{{ page.next.url }}" rel="bookmark">{{ page.next.title | truncatewords:5 }} <i class="fa fa-arrow-circle-right"></i></a></li>{% else %}<li class="next disabled"><a>没有下一篇了 <i class="fa fa-arrow-circle-right"></i></a></li>{% endif %}
+      {% if page.previous %}<li class="previous"><a href="{{ page.previous.url }}"><i class="fa fa-arrow-circle-left"></i> {{ page.previous.title | truncatewords:5 }}</a></li>{% else %}<li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i> 没有上一篇了</a></li>{% endif %}
+      {% if page.next %}<li class="next"><a href="{{ page.next.url }}">{{ page.next.title | truncatewords:5 }} <i class="fa fa-arrow-circle-right"></i></a></li>{% else %}<li class="next disabled"><a>没有下一篇了 <i class="fa fa-arrow-circle-right"></i></a></li>{% endif %}
     </ul>
     {% endif %}
-    <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-home"></i> 返回首页</button></a></div>
+    <div class="text-center"><a href="/"><button type="button" class="btn btn-sm btn-default"><i class="fa fa-home"></i> 返回首页</button></a></div>
   </div>
 </div>
 
+{% if site.share.enabled or site.comment.enabled %}
 <div class="row translucent">
   <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
-    {% if site.share.config %}<div class="col-md-12 bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>{% endif %}
-    {% if site.comment.config %}<div class="col-md-12 ds-thread" data-thread-key="{{ page.url | remove_first:'/' }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url | remove_first:'/' }}"></div>{% endif %}
+    {% if site.share.enabled %}<div class="col-md-12 bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>{% endif %}
+    {% if site.comment.enabled %}<div class="col-md-12 ds-thread" data-thread-key="{{ page.url | remove_first:'/' }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url | remove_first:'/' }}"></div>{% endif %}
   </div>
 </div>
+{% endif %}
 
-{% if site.share.config %}<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","weixin","sqq","fbook","renren","mail","print","copy"],"viewText":"分享到：","viewSize":"24"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>{% endif %}
-{% if site.comment.config %}<script type="text/javascript">var duoshuoQuery={short_name:"{{ site.comment.id }}"};(function(){var ds=document.createElement('script');ds.type='text/javascript';ds.async=true;ds.src=(document.location.protocol=='https:'?'https:':'http:')+'//static.duoshuo.com/embed.js';ds.charset='UTF-8';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>{% endif %}
+{% if site.share.enabled %}<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","weixin","sqq","fbook","renren","mail","print","copy"],"viewText":"分享到：","viewSize":"24"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>{% endif %}
+{% if site.comment.enabled %}<script type="text/javascript">var duoshuoQuery={short_name:"{{ site.comment.id }}"};(function(){var ds=document.createElement('script');ds.type='text/javascript';ds.async=true;ds.src=(document.location.protocol=='https:'?'https:':'http:')+'//static.duoshuo.com/embed.js';ds.charset='UTF-8';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ds);})();</script>{% endif %}
