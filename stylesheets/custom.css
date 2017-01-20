@@ -26,8 +26,10 @@ a:hover {
 }
 
 .translucent {
-  margin-top: 5%;
-  margin-bottom: 10%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  padding-top: 6%;
+  padding-bottom: 6%;
   background: #fff;
   box-shadow: 0 0 0 0,0 6px 12px rgba(0,0,0,0.1);
 }
@@ -45,18 +47,12 @@ a:hover {
 }
 
 .main-content {
-  margin-bottom: 6%;
-  padding-bottom: 60px;
+  margin-bottom: 10%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
   font-weight: 700;
-}
-
-.article {
-  padding-top: 10%;
-  padding-bottom: 5%;
 }
 
 p {

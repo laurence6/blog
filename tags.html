@@ -3,7 +3,7 @@ layout: default
 title: 标签
 ---
 <div class="row translucent">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1">
     {% for tag in site.tags %}
     <h4 class="col-xs-3 col-sm-2 col-md-2 col-lg-2 text-nowrap">
       <span class="label label-default"><a href="#{{ tag[0] }}-ref">{{ tag[0] | join: "/" }}</span></a>
@@ -13,7 +13,7 @@ title: 标签
 </div>
 {% for tag in site.tags %}
 <div class="row translucent" id="{{ tag[0] }}-ref">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1">
     <h3><i class="fa fa-tag"></i> {{ tag[0] | join: "/" }}</h3>
     {% for node in tag[1] %}
     {% if node.title != null %}{% if group == null or group == node.group %}

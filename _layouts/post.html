@@ -11,13 +11,13 @@ layout: default
 </div>
 
 <div class="row translucent">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1">
     {{ content }}
   </div>
 </div>
 
 <div class="row translucent">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1">
     {% if page.previous or page.next %}
     <ul class="pager">
       {% if page.previous %}<li class="previous"><a href="{{ page.previous.url }}"><i class="fa fa-arrow-circle-left"></i> {{ page.previous.title | truncatewords:5 }}</a></li>{% else %}<li class="previous disabled"><a><i class="fa fa-arrow-circle-left"></i> 没有上一篇了</a></li>{% endif %}
@@ -30,7 +30,7 @@ layout: default
 
 {% if site.share.enabled or site.comment.enabled %}
 <div class="row translucent">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-sm-push-1 col-md-push-1 article">
+  <div class="col-xs-12 col-sm-10 col-sm-push-1">
     {% if site.share.enabled %}<div class="col-md-12 bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>{% endif %}
     {% if site.comment.enabled %}<div class="col-md-12 ds-thread" data-thread-key="{{ page.url | remove_first:'/' }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url | remove_first:'/' }}"></div>{% endif %}
   </div>
