@@ -9,7 +9,7 @@ safe: false
 
 title: GoLaurence
 keywords: ["GoLaurence", "computer"]
-description: Blog of Laurence Liu, student of the Ohio State University
+description: Blog of Laurence Liu, student of The Ohio State University
 url: http://blog.laurence.tk
 feed: /atom.xml
 favicon: /images/icon.ico
@@ -21,8 +21,6 @@ nav:
     url: /aboutme.html
   - text: <i class="fa fa-tags fa-fw"></i>标签
     url: /tags.html
-  - text: <i class="fa fa-link fa-fw"></i>朋友
-    url: /links.html
 
 author:
     name: Laurence
@@ -35,12 +33,6 @@ follow:
     url: https://telegram.me/laurence6
   - class: fa fa-rss fa-lg
     url: /atom.xml
-
-links:
-  - item:
-    - text: Broncotc
-      url: http://blog.broncotc.com/
-    message: 朋友
 
 googleanalytics:
     enabled: false
