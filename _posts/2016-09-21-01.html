@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PEG.go
-tags: ["compiler","go"]
+tags: ["编译器", "go"]
 ---
 <p>开了个新坑。正在写一个使用 PEG (Parsing Expression Grammar (<a href="https://en.wikipedia.org/wiki/Parsing_expression_grammar" target="_blank">Wikipedia</a>)) 的 parser generator，类似于 <a href="http://pegjs.org/" target="_blank">PEG.js</a>。</p>
 <p>PEG 在 2004 年由 Bryan Ford 提出，不同于传统的 CFG，类似于以前的自顶向下解析。主要不同在于选择运算符，PEG 中，如果第一个选项成功匹配了，之后的都将被忽略。</p>
