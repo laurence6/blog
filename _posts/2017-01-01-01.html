@@ -1,0 +1,96 @@
+---
+layout: post
+title: Ray tracing in Rust
+tags: ["计算机图形学","光线追踪","rust"]
+---
+<p>
+从 2017 年初开始研究光线追踪进行图像合成，准备用 Rust 实现一个光线追踪渲染器。
+应该会很好玩，但也是一个挺大的坑，就当作是 2017 年的新玩具吧。
+</p>
+
+<p>
+光线追踪 (Ray tracing (<a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)" target="_blank">Wikipedia</a>)) 是一种渲染方法，
+能够渲染出相对真实的图像，但同时也需要很大的运算量。
+</p>
+
+<p>
+<a href="https://www.rust-lang.org/en-US/" target="_blank">Rust</a> 是一门较新的语言。
+目标是作为一种快速的，能够保证内存安全，线程安全的系统级编程语言，拥有很多函数式语言的特性，没有垃圾回收。
+</p>
+
+<p>在看图形学的资料时，常常会感受到缺少一些数学、物理学、统计学的知识，所以在前期很多时间都是用来补这些知识，也算一个学以致用的过程。</p>
+
+<h3>记录</h3>
+
+<p>
+有一个比较困扰的问题是，在 debug 的时候，虽然能从 log 里或得到一些信息，
+比如点的位置、光线的位置方向，但这些都是以一串数字给出的，并不算直观。
+想到了一个方法，把 log 里的数据导入到 three.js，
+这样就可以在浏览器里借用成熟的平台来查看我的场景并 debug 了。
+</p>
+
+<hr />
+
+<p>
+被一个 bug 卡了有两三天。是这样的，用了上面的方法之后，非常直观地发现，生成的光线方向很诡异。
+于是顺着代码一行一行走，找到了好几个问题。
+</p>
+
+<p>
+1. 在构造 <code>PerspectiveCamera</code> 的代码中，因为手滑写错了几个字母
+，比如 <code>x</code> 和 <code>y</code> 写反了，<code>min</code> 和 <code>max</code> 写混了。
+</p>
+
+<p>
+2. <code>Transform::look_at()</code> 应该返回一个 camera-to-world 变换，但是实际上返回的是
+world-to-camera 变换。
+</p>
+
+<p>
+3. 生成的光线的方向向量没有被归一化 (normalize)。
+</p>
+
+<p>
+这三个问题花了一些时间找到，但在修复了这些问题之后，生成的光线只朝向相机 (<code>PerspectiveCamera</code>) 视锥左下角的四分之一。
+而且，通读了这些代码之后，再也找不到有什么问题了。
+然后，基本确定一定是相机的从屏幕坐标到世界坐标的转换有错。
+然而，这里只有不长的一些代码，仔细理了理逻辑也没有问题。
+于是只好反反复复看，看到相机的构造函数里有用到变换矩阵的逆，想了想是不是求逆矩阵写错了。
+输出之后看到，变换 (<code>Transform</code>) 里的逆矩阵并不是原矩阵的逆矩阵(...啊咧?)。
+遂测试求逆矩阵的函数，却发现并没有错，输出非常正常，非常正确，很奇怪。
+最后发现变换重载的乘法运算符函数里是这样的:
+
+{% highlight rust %}
+fn mul(self, t: Transform) -> Transform {
+    Transform {
+        m: self.m * t.m,
+        m_inv: self.m_inv * t.m_inv,
+    }
+}
+{% endhighlight %}
+
+然而，正确的做法是这样:
+
+{% highlight rust %}
+fn mul(self, t: Transform) -> Transform {
+    Transform {
+        m: self.m * t.m,
+        m_inv: t.m_inv * self.m_inv, // 注意这行
+    }
+}
+{% endhighlight %}
+
+简单的数学问题...
+</p>
+
+<h3>参考资料</h3>
+<ul>
+	<li>
+		Matt Pharr, Greg Humphreys, Wenzel Jakob. <i>Physically Based Rendering: From Theory to Implementation</i>
+		<br />
+		用了 2016 年末发布的第三版。书中展示了一个完整的管线追踪渲染器 pbrt-v3。
+	</li>
+	<li>Fletcher Dunn, Ian Parberry. <i>3D Math Primer for Graphics and Game</i></li>
+	<li><a href="https://www.scratchapixel.com/" target="_blank">Scratchapixel</a></li>
+	<li>pt.go</li>
+</ul>
