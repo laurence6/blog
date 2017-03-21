@@ -39,6 +39,3 @@ googleanalytics:
     id: UA-44812964-1
 share:
     enabled: false
-comment:
-    enabled: false
-    id: laurence
