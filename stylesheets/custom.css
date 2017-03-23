@@ -15,6 +15,12 @@
   table-layout: fixed;
 }
 
+@media (min-width: 768px) {
+  .navbar-header {
+    position: absolute;
+  }
+}
+
 .main-content {
   margin-bottom: 10%;
 }
@@ -23,6 +29,12 @@
   padding-top: 60px;
   line-height: 1;
   font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .site-title {
+    padding-top: 100px;
+  }
 }
 
 .translucent {
@@ -38,6 +50,12 @@
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .tl-title {
+    text-align: center;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,21 +82,6 @@ a:hover {
   background-color: #000;
   color: #fff;
   text-shadow: none;
-}
-
-@media (max-width: 767px) {
-  .tl-title {
-    text-align: center;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar-header {
-    position: absolute;
-  }
-  .site-title {
-    padding-top: 100px;
-  }
 }
 
 .returnTop {
@@ -121,4 +124,9 @@ a:hover {
 }
 #QR.affix {
   top: 80px;
+}
+@media (max-width: 1199px) {
+  #QR {
+    display: none;
+  }
 }
