@@ -9,7 +9,7 @@ safe: false
 
 title: GoLaurence
 keywords: ["GoLaurence", "computer"]
-description: Blog of Laurence Liu, student of The Ohio State University
+description: Blog of Laurence, student of The Ohio State University
 url: http://blog.laurence.tk
 feed: /atom.xml
 favicon: /images/icon.ico
@@ -34,8 +34,5 @@ follow:
   - class: fa fa-rss fa-lg
     url: /atom.xml
 
-googleanalytics:
-    enabled: false
-    id: UA-44812964-1
 share:
     enabled: false

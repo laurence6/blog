@@ -83,7 +83,6 @@
 
   <script src="/javascripts/jquery.min.js"></script>
   <script src="/javascripts/bootstrap.min.js"></script>
-  {% if site.googleanalytics.enabled %}<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ site.googleanalytics.id }}','auto');ga('send','pageview');</script>{% endif %}
   <script>
     $(function() {
       $(window).scroll(function(e){if($(window).scrollTop()>20)$("div.returnTop").fadeIn(1000);else $("div.returnTop").fadeOut(1000)});
